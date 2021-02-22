@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "MarvelChallenge"
+    }
+  },
+  "defaultProject": "MarvelChallenge",
+  "cli": {
+    "analytics": "025ebd4e-03d6-4e17-b4e5-01a371dc6b3b"
+  }
 }
