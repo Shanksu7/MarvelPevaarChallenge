@@ -1,6 +1,4 @@
 import { CharacterList } from "../../characters/classes/character-list";
-import { ComicDate } from "../../commics/classes/comic-date";
-import { ComicPrice } from "../../commics/classes/comic-price";
 import { Image } from "../../common-marvel/classes/image";
 import { TextObject } from "../../common-marvel/classes/text-object";
 import { Url } from "../../common-marvel/classes/url";
@@ -8,6 +6,8 @@ import { CreatorList } from "../../creators/classes/creator-list";
 import { EventList } from "../../events/classes/event-list";
 import { SeriesSummary } from "../../series/classes/series-summary";
 import { StoryList } from "../../stories/classes/story-list";
+import { ComicDate } from "./comic-date";
+import { ComicPrice } from "./comic-price";
 import { ComicSummary } from "./comic-summary";
 
 export class Comic {
