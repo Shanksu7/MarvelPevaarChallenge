@@ -24,7 +24,7 @@ export class CharacterService {
   getPaginatedCharacters(params?: SearchParams) : Observable<CharacterDataWrapper> {
     var url = this.endpoint('', params);
     console.log(url);
-    return this.http.get<CharacterDataWrapper>(url);
+    return this.http.get<CharacterDataWrapper>(url.replace('http', 'https'));
   }
 
 }
