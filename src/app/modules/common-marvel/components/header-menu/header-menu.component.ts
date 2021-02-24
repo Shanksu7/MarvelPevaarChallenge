@@ -13,4 +13,8 @@ export class HeaderMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goToGit() {
+    window.open('https://github.com/Shanks97/MarvelPevaarChallenge', "_blank");
+  }
+
 }

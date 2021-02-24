@@ -1,12 +1,28 @@
-<a [routerLink]="['/']" >
-    Home
-  </a>
-  <a [routerLink]="['/challenge']" >
-    Challenge
-  </a>
-  <a [routerLink]="['/cart']" >
-    Cart
-  </a>
-  <a [routerLink]="['/history']" >
-    History
-  </a>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark router-header">
+    <a class="nav-link" href="#" [routerLink]="['/']"><img src="https://static3.srcdn.com/wordpress/wp-content/uploads/2019/12/marvel-logo-header.jpg" style="height: 45px;"/></a>
+    
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav m-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/challenge']">Challenge</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/cart']">Cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/history']">History</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav" style="float: left;">
+            <li class="nav-item">
+                <a href="#" (click)="goToGit()">
+                    <i class="fa fa-github" style="font-size:48px;color:white"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

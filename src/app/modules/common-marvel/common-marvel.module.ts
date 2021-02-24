@@ -11,7 +11,6 @@ import { CartComponent } from './components/cart/cart.component';
 import { HistoryComponent } from './components/history/history.component';
 
 
-
 @NgModule({
   declarations: [FooterComponent, HeaderMenuComponent, PdfViewModalComponent, CartComponent, HistoryComponent],
   imports: [
