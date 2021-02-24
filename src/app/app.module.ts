@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonMarvelModule } from './modules/common-marvel/common-marvel.module';
 import { CharacterService } from './services/character.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CharactersModule,
     HttpClientModule,
     CommonMarvelModule,
-    NgbModule
+    NgbModule,
+    PdfViewerModule,
+    RouterModule,
   ],
   providers: [CharacterService],
   bootstrap: [AppComponent]
