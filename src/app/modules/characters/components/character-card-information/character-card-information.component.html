@@ -1,3 +1,18 @@
-<div>
-    
+<div class="card">
+    <div class="container">
+        <div class="col-12">
+            {{character.name}}
+        </div>
+        <div>
+            <img src="{{character.thumbnail.path}}/portrait_medium.jpg" alt="{{character.name}}.jpg"/>
+        </div>
+        <div>
+            <p>{{character.description}}</p>
+        </div>
+        <div>
+            <div *ngFor="let comic of character.comics.items">
+                <a href="#" (click)="goToLink(createComicUrl(comic.resourceURI))">{{comic.name}}</a>
+            </div>
+        </div>
+    </div>
 </div>

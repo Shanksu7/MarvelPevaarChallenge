@@ -1,5 +1,9 @@
-import { DataContainer } from "../../common-marvel/interface/data-container";
 import { Story } from "./story";
 
-export class StoryDataContainer implements DataContainer<Story> {
+export class StoryDataContainer {
+    offset?: number;
+    limit?: number;
+    total?: number;
+    count?: number;
+    results?: Story[];
 }

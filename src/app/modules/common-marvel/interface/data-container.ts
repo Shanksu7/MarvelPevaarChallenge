@@ -1,4 +1,4 @@
-export interface DataContainer<T> {
+export interface DataContainerDeprecated<T> {
   offset?: number;
   limit?: number;
   total?: number;

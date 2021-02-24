@@ -1,5 +1,10 @@
-import { DataWrapper } from "../../common-marvel/interface/data-wrapper";
 import { StoryDataContainer } from "./story-data-container";
 
-export class StoryDataWrapper implements DataWrapper<StoryDataContainer> {
+export class StoryDataWrapper {
+    code?: number;
+    status?: string;
+    copyright?: string;
+    attributionText?: string;
+    data?: StoryDataContainer;
+    etag?: string;
 }

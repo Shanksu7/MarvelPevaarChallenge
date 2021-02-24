@@ -1,5 +1,9 @@
-import { DataContainer } from "../../common-marvel/interface/data-container";
 import { Comic } from "./comic";
 
-export class ComicDataContainer implements DataContainer<Comic> {
+export class ComicDataContainer {
+    offset?: number;
+    limit?: number;
+    total?: number;
+    count?: number;
+    results?: Comic[];
 }

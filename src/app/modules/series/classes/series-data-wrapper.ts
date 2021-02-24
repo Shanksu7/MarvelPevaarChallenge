@@ -1,5 +1,10 @@
-import { DataWrapper } from "../../common-marvel/interface/data-wrapper";
 import { SeriesDataContainer } from "./series-data-container";
 
-export class SeriesDataWrapper implements DataWrapper<SeriesDataContainer> {
+export class SeriesDataWrapper {
+    code?: number;
+    status?: string;
+    copyright?: string;
+    attributionText?: string;
+    data?: SeriesDataContainer;
+    etag?: string;
 }

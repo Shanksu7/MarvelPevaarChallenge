@@ -35,5 +35,6 @@ export class SearchParams {
     if (this.orderBy) param += `&orderBy=${this.orderBy}`;
     if (this.limit) param += `&limit=${this.limit}`;
     if (this.offset) param += `&offset=${this.offset}`;
+    return param;
   }
 }

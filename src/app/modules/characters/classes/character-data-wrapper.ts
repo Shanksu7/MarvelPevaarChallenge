@@ -1,6 +1,10 @@
-import { DataWrapper } from "../../common-marvel/interface/data-wrapper";
 import { CharacterDataContainer } from "./character-data-container";
 
-export class CharacterDataWrapper implements DataWrapper<CharacterDataContainer> {
-
+export class CharacterDataWrapper {
+    code?: number;
+    status?: string;
+    copyright?: string;
+    attributionText?: string;
+    data?: CharacterDataContainer;
+    etag?: string;
 }

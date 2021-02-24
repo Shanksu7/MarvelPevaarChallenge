@@ -1,7 +1,11 @@
-import { DataWrapper } from "../../common-marvel/interface/data-wrapper";
 import { ComicDataContainer } from "./comic-data-container";
 
-export class ComicDataWrapper implements DataWrapper<ComicDataContainer>
+export class ComicDataWrapper 
 {
-  
+    code?: number;
+  status?: string;
+  copyright?: string;
+  attributionText?: string;
+  data?: ComicDataContainer;
+  etag?: string;
 }

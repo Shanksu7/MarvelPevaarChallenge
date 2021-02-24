@@ -1,5 +1,9 @@
-import { DataContainer } from "../../common-marvel/interface/data-container";
 import { Event } from "./event";
 
-export class EventDataContainer implements DataContainer<Event> {
+export class EventDataContainer {
+    offset?: number;
+    limit?: number;
+    total?: number;
+    count?: number;
+    results?: Event[];
 }
