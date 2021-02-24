@@ -1,19 +1,32 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark router-header">
-    <a class="nav-link" href="#" [routerLink]="['/']"><img src="https://static3.srcdn.com/wordpress/wp-content/uploads/2019/12/marvel-logo-header.jpg" style="height: 45px;"/></a>
-    
+    <a class="nav-link" href="#" [routerLink]="['/']"><img
+            src="https://static3.srcdn.com/wordpress/wp-content/uploads/2019/12/marvel-logo-header.jpg"  style="height: 45px"/></a>
+
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav m-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#" [routerLink]="['/challenge']">Challenge</a>
+                <a class="nav-link" href="#" [routerLink]="['/challenge']">
+                    <img class="menu-icon"
+                        src="../../../../../assets/icons/challenge-icon.png" />
+                    Challenge
+                </a>
             </li>
             <li class="nav-item">
-                <span class="nav-link" href="#" [routerLink]="['/cart']">Cart</span>
+                <a class="nav-link" href="#" [routerLink]="['/cart']">
+                    <img class="menu-icon"
+                        src="../../../../../assets/icons/cartmenu.jpg" />
+                    Cart
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" [routerLink]="['/history']">History</a>
+                <a class="nav-link" href="#" [routerLink]="['/history']">
+                    <img class="menu-icon"
+                        src="../../../../../assets/icons/history-icon.png" />
+                    History
+                </a>
             </li>
         </ul>
 
