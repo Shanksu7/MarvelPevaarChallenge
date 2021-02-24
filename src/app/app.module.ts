@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharactersModule } from './modules/characters/characters.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonMarvelModule } from './modules/common-marvel/common-marvel.module';
+import { CharacterService } from './services/character.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +15,11 @@ import { CharactersModule } from './modules/characters/characters.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CharactersModule
+    CharactersModule,
+    HttpClientModule,
+    CommonMarvelModule
   ],
-  providers: [],
+  providers: [CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

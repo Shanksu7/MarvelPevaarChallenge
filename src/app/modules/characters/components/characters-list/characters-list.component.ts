@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CharacterService } from 'src/app/services/character.service';
 
 @Component({
   selector: 'app-characters-list',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private characterService: CharacterService)
+  {
+    let list = characterService.getPaginatedCharacters(1);
+  }
 
   ngOnInit(): void {
   }

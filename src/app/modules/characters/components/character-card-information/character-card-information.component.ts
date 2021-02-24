@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CharacterService } from 'src/app/services/character.service';
 import { Character } from '../../classes/character';
 
 @Component({
@@ -10,7 +9,7 @@ import { Character } from '../../classes/character';
 export class CharacterCardInformationComponent implements OnInit {
 
   @Input() character: Character;
-  constructor(private characterService: CharacterService) { }
+ constructor(){}
 
   ngOnInit(): void {
   }
