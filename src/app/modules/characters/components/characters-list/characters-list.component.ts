@@ -14,11 +14,12 @@ export class CharactersListComponent implements OnInit {
 
   characters: Character[];
 
+  closeResult: string;
   constructor(private characterService: CharacterService)
   {
     let params = new SearchParams();
     params.limit = 10;
-    params.offset = 100;
+    //params.offset = 100;
     let list = characterService.getPaginatedCharacters(params).subscribe(data => 
       {
         console.log(data)
@@ -28,5 +29,7 @@ export class CharactersListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
 
 }

@@ -13,6 +13,7 @@ import { ComicSummary } from "./comic-summary";
 export class Comic {
   id: number;
   digitalId: number;
+  title: string;
   issueNumber: number;
   variantDescription: string;
   description: string;
@@ -39,4 +40,6 @@ export class Comic {
   characters: CharacterList;
   stories: StoryList;
   events: EventList;
+
+ 
 }

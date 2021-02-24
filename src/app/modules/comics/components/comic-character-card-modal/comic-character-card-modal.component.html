@@ -1,0 +1,37 @@
+<div>
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{ comicData.name }}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+    </button>
+</div>
+<div *ngIf="comic" class="container">
+    <div class="row">
+        <div class="col">
+            <div class="modal-body">
+                <img class="profile-pic" src="{{comic.thumbnail.path}}/portrait_xlarge.{{comic.thumbnail.extension}}"
+                    alt="{{comicData.name}}.jpg" />
+            </div>
+        </div>
+        <div class="col">
+            {{ comic.description }}
+        </div>
+    </div>
+
+    <div class="modal-footer">
+    </div>
+    <div class="row">
+        <button type="button" class="btn col-12" (click)="switchFavorites()" [ngClass]="(isFavorite)?'added-fav':'add-fav'"
+        >
+            <img src="{{ !isFavorite ? '../../../../../assets/icons/btn-favourites-default.png':'../../../../../assets/icons/btn-favourites-primary.png'}}" />
+            {{isFavorite ? "REMOVE FAVORITE" : 'ADD TO FAVOURITES'}}
+        </button>
+
+        <button type="button" class="btn buy-btn col-12" *ngFor="let price of comic.prices" (click)="buy(price)">
+            <div>
+                <img src="../../../../../assets/icons/shopping-cart-primary.png" />
+                {{(price.price == 0 ? 'ITS FREE!!':'BUY FOR $' + price.price + ' ('+price.type+')')}}
+            </div>
+        </button>
+    </div>
+</div>

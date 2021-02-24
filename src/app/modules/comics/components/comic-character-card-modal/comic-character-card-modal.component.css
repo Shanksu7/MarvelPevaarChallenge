@@ -1,0 +1,23 @@
+
+.btn
+{
+width: 100%;
+text-align: left !important;
+}
+.add-fav{
+    background-color: lightgray;
+    color: black;
+}
+.added-fav{
+background-color: black;
+color: red;
+}
+
+.buy-btn{
+background-color: #ddd6d6;
+align-items: flex-start;
+}
+
+.modal{
+    /*display: block;*/
+}

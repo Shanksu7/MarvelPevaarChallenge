@@ -7,6 +7,7 @@ import { CharactersModule } from './modules/characters/characters.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonMarvelModule } from './modules/common-marvel/common-marvel.module';
 import { CharacterService } from './services/character.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CharacterService } from './services/character.service';
     AppRoutingModule,
     CharactersModule,
     HttpClientModule,
-    CommonMarvelModule
+    CommonMarvelModule,
+    NgbModule
   ],
   providers: [CharacterService],
   bootstrap: [AppComponent]

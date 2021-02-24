@@ -13,7 +13,6 @@ export class CharacterService {
 
   constructor(private http: HttpClient)
   {
-    let x = new ServiceConstants();
     console.log(getParams());
   }
 
