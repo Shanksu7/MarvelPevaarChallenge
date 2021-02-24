@@ -5,3 +5,13 @@
 .bg-dark{
     background-color: black !important;
 }
+
+.nav-item{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: larger;
+    margin-right: 2em;
+}
+.nav-separator{
+    color:white;
+}
