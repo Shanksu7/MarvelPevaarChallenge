@@ -23,13 +23,14 @@ export class ComicCharacterCardModalComponent implements OnInit {
   ngOnInit(): void {
     this.comicService.getComicFromUrl(this.comicData.resourceURI).subscribe(data =>    
     {
-      this.comic = data.data.results[0];
-      console.log(this.comic);
-      let arr = new Map(JSON.parse(localStorage.getItem(this.comicKey)));
-      
+      let _comic = data.data.results[0];
+
+      let arr = new Map(JSON.parse(localStorage.getItem(this.comicKey)));      
       console.log('localStorage');
       console.log(localStorage.getItem(this.comicKey));
-      this.isFavorite = !!arr.get(this.comic.id);
+      this.isFavorite = !!arr.get(_comic.id);
+      this.comic = _comic;
+      console.log(this.comic);     
     });
     
   }

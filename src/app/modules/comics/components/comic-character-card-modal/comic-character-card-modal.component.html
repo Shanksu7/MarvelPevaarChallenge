@@ -24,7 +24,7 @@
         <button type="button" class="btn col-12" (click)="switchFavorites()" [ngClass]="(isFavorite)?'added-fav':'add-fav'"
         >
             <img src="{{ !isFavorite ? '../../../../../assets/icons/btn-favourites-default.png':'../../../../../assets/icons/btn-favourites-primary.png'}}" />
-            {{isFavorite ? "REMOVE FAVORITE" : 'ADD TO FAVOURITES'}}
+            {{isFavorite ? "REMOVE FROM FAVOURITES" : 'ADD TO FAVOURITES'}}
         </button>
 
         <button type="button" class="btn buy-btn col-12" *ngFor="let price of comic.prices" (click)="buy(price)">
