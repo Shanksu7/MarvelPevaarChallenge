@@ -18,6 +18,6 @@ background-color: #ddd6d6;
 align-items: flex-start;
 }
 
-.modal{
-    /*display: block;*/
+.price{
+    color: red;
 }

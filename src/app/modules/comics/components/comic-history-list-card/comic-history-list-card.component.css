@@ -1,0 +1,21 @@
+
+.card-comic{
+    height: 300px;
+    width: 250px;
+    text-align: center;
+    margin-top: 15px;
+    background-color: rgba(255,255,255,0.0);
+    color: white;
+    font-weight: 600;
+}
+.comic-pic{
+    position: relative;
+}
+.delete-button{
+    max-width: 75px;
+    position: absolute;
+    bottom: 280px;
+    left: 196px;
+    cursor: pointer;
+}
+

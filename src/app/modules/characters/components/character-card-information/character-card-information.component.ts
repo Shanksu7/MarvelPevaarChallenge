@@ -13,6 +13,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 export class CharacterCardInformationComponent implements OnInit {
 
   @Input() character: Character;
+  @Input() favModal: any;
   comicsToShow: ComicSummary[] = [];
   closeResult: string;
   notDesc = '<no description>';
@@ -33,12 +34,6 @@ export class CharacterCardInformationComponent implements OnInit {
     //window.open(url, "_blank");
   }
 
-  AAaa(element){
-    console.log(element);
-
-
-  }
-
   createComicUrl(url) {
     return url + getParams();
   }
@@ -46,6 +41,12 @@ export class CharacterCardInformationComponent implements OnInit {
   viewMore() {
     Swal.fire('redirect to id ' + this.character.id, '', 'info');
     console.log('view more');
+  }
+  comicFavAdded($comicId: number) {
+    this.favModal.load();
+  }
+  comicFavDel($comicId: number) {
+    this.favModal.load();
   }
 
   open(content, comic: ComicSummary) {

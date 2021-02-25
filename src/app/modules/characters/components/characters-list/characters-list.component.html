@@ -1,18 +1,31 @@
 <div class="main-container">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <img class="character-icon" src="../../../../../assets/icons/characters.png"/>
-                Characters
-            </div>
-        </div>
-        <div class="row" *ngIf="characters">
-            <div class="col-6 hero-card" *ngFor="let character of characters">
 
-                <app-character-card-information [character]="character"></app-character-card-information>
-            </div>
-        </div>       
+
+        </div>
+
     </div>
 </div>
 
-   
+
+<div class="row">
+    <div class="column-side">
+        <h2>Column 1</h2>
+        <p>Some text..</p>
+    </div>
+    <div class="column" style="background-color:#bbb;">
+        <div class="col-12">
+            <img class="character-icon" src="../../../../../assets/icons/characters.png" />
+            Characters
+        </div>
+        <div class="row"    >
+            <div class="col-6" *ngFor="let character of characters">
+                <app-character-card-information [favModal]="favs" [character]="character"></app-character-card-information>   
+            </div>
+        </div>
+    </div>
+    <div class="column-side">
+        <app-comic-fav-list #favs></app-comic-fav-list>
+    </div>
+</div>

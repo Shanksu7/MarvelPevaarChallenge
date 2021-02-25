@@ -28,7 +28,7 @@
         </button>
 
         <button type="button" class="btn buy-btn col-12" *ngFor="let price of comic.prices" (click)="buy(price)">
-            <div>
+            <div class="price">
                 <img src="../../../../../assets/icons/shopping-cart-primary.png" />
                 {{(price.price == 0 ? 'ITS FREE!!':'BUY FOR $' + price.price + ' ('+price.type+')')}}
             </div>

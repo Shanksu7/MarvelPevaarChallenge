@@ -1,6 +1,7 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { ComicService } from 'src/app/services/comic.service';
+import { ComicfavoritesService } from 'src/app/services/favs/comicfavorites.service';
 import Swal from 'sweetalert2';
 import { Comic } from '../../classes/comic';
 import { ComicSummary } from '../../classes/comic-summary';
@@ -14,12 +15,14 @@ export class ComicCharacterCardModalComponent implements OnInit {
 
   @Input() comicData: ComicSummary;
   @Input() modal: any;
+  @Output() favAdded = new EventEmitter<number>();
+  @Output() favDeleted = new EventEmitter<any>();
   comic: Comic;
   closeResult: string;
   isFavorite: boolean;
   comicKey: string = 'favorite-comics';
   
-  constructor(private modalService: NgbModal, private comicService: ComicService) { }
+  constructor(private modalService: NgbModal, private comicService: ComicService, private comicFavService: ComicfavoritesService) { }
 
   ngOnInit(): void {
     this.comicService.getComicFromUrl(this.comicData.resourceURI).subscribe(data =>    
@@ -42,25 +45,12 @@ export class ComicCharacterCardModalComponent implements OnInit {
     console.log(arr);
 
     if (!this.isFavorite) {
-      if (!arr)
-      {
-        let map = new Map<number, any>();
-        map.set(this.comic.id, this.toLSObj(this.comic));
-        console.log("first save");
-        console.log(map);
-        console.log(JSON.stringify(Array.from(map.entries())));
-        localStorage.setItem(this.comicKey, JSON.stringify(Array.from(map.entries())));
-      }
-      else {
-        let ob = new Map(JSON.parse(arr));
-        ob.set(this.comic.id, this.toLSObj(this.comic));
-        localStorage.setItem(this.comicKey, JSON.stringify(Array.from(ob.entries())));  
-      }
+      this.comicFavService.addFavorite(this.comic);
+      this.favAdded.emit(this.comic.id);
     }
     else {
-      let ob = new Map(JSON.parse(arr));
-      ob.delete(this.comic.id);
-      localStorage.setItem(this.comicKey, JSON.stringify(Array.from(ob.entries())));
+      this.comicFavService.deleteFavorite(this.comic.id);
+      this.favDeleted.emit(this.comic);
     }
     this.isFavorite = !this.isFavorite;
   }
