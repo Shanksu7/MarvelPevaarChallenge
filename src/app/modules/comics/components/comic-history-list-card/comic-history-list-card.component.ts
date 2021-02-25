@@ -19,6 +19,6 @@ export class ComicHistoryListCardComponent implements OnInit {
   onDelete() {
     this.comicFavService.deleteFavorite(this.comic.id);
     this.favDelete.emit(this.comic);
-    Swal.fire('delete', this.comic.name, 'success');
+    //Swal.fire('delete', this.comic.name, 'success');
   }
 }
