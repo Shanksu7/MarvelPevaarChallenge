@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { ComicService } from 'src/app/services/comic.service';
+import Swal from 'sweetalert2';
 import { Comic } from '../../classes/comic';
 import { ComicSummary } from '../../classes/comic-summary';
 
@@ -66,6 +67,34 @@ export class ComicCharacterCardModalComponent implements OnInit {
 
   buy($price) {
     console.log($price);
+    let image = `<img class="profile-pic" src="${this.comic.thumbnail.path}/portrait_xlarge.${this.comic.thumbnail.extension}"
+    alt="${this.comicData.name}.jpg" /><br><br>`
+    let address = $price.type == 'printPrice' ? 'Comic will be delivered to your address' : 'Comic will be activated for you to read in some hours'
+    let html = image+ 'Do you want to pay $' + $price.price + ' for this comic?<br><br>'+ address+'<br><br>Trust me :)';
+
+    let alertOption = {
+      title: this.comic.title,
+      html: html,
+      cancelButtonColor:"#d33",
+      showCancelButton:true,
+      cancelButtonText:"I'll do it later",
+      confirmButtonColor:"#3085d6",
+      confirmButtonText:'Yes, give it to me!',
+      showLoaderOnConfirm:true,
+      focusCancel:true,
+      preConfirm: () => {
+    return new Promise<void>((resolve, reject) => {
+      setTimeout(() => {
+        console.log("Doing async operation");
+        Swal.fire('Now it\'s yours, just wait for it!', '', 'success');
+        resolve()
+      }, 3000)
+    })
+  },
+  allowOutsideClick: () => !Swal.isLoading()
+    }
+    //Swal.fire(this.comic.title, html, 'info');
+    Swal.fire(alertOption);
   }
 
   toLSObj(comic: Comic) : any{
