@@ -15,7 +15,7 @@ export class CharacterCardInformationComponent implements OnInit {
   @Input() character: Character;
   comicsToShow: ComicSummary[] = [];
   closeResult: string;
-  notDesc = '<no description>'
+  notDesc = '<no description>';
   constructor(private modalService: NgbModal) {
 
   }
@@ -31,6 +31,12 @@ export class CharacterCardInformationComponent implements OnInit {
     Swal.fire(url);
     //ref here https://www.npmjs.com/package/sweetalert2
     //window.open(url, "_blank");
+  }
+
+  AAaa(element){
+    console.log(element);
+
+
   }
 
   createComicUrl(url) {

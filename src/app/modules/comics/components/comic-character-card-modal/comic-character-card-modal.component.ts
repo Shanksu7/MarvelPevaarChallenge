@@ -70,7 +70,8 @@ export class ComicCharacterCardModalComponent implements OnInit {
     let image = `<img class="profile-pic" src="${this.comic.thumbnail.path}/portrait_xlarge.${this.comic.thumbnail.extension}"
     alt="${this.comicData.name}.jpg" /><br><br>`
     let address = $price.type == 'printPrice' ? 'Comic will be delivered to your address' : 'Comic will be activated for you to read in some hours'
-    let html = image+ 'Do you want to pay $' + $price.price + ' for this comic?<br><br>'+ address+'<br><br>Trust me :)';
+    let pay = $price.price > 0 ? 'Do you want to pay $' + $price.price + ' for this comic?' : 'this comic is free';
+    let html = image+ pay + '<br><br>'+ address+'<br><br>Trust me :)';
 
     let alertOption = {
       title: this.comic.title,

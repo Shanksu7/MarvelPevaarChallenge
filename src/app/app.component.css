@@ -73,11 +73,14 @@
   }
 
   .card-hero:not(.highlight-card):hover {
-    box-shadow: 0 4px 17px rgba(160, 20, 20, 0.35);
+    box-shadow: 0 4px 17px rgba(255, 255, 255, 0.85);
+    height: 452px;
+    width: 552px;
+  
   }
 
   .card-hero:not(.highlight-card):hover .material-icons path {
-    fill: rgb(240, 33, 33);
+    fill: white
   }
 
   .card-hero.highlight-card {

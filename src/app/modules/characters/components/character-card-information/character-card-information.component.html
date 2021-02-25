@@ -1,7 +1,8 @@
 <div class="card-hero">
     <div class="container">
         <div class="image-cropper">
-            <img class="profile-pic" src="{{character.thumbnail.path}}/standard_xlarge.{{character.thumbnail.extension}}"
+            <img class="profile-pic"
+                src="{{character.thumbnail.path}}/standard_xlarge.{{character.thumbnail.extension}}"
                 alt="{{character.name}}.jpg" />
         </div>
         <div class="row">
@@ -9,7 +10,8 @@
                 <div class="row">
                     <h3 class="name" class="col-12">{{character.name}}</h3>
                     <div class="ellipsis container-desc col-9">
-                        <p class="col-11">{{(character.description == '' || !character.description ? notDesc : character.description)}}</p>
+                        <p class="col-11">{{(character.description == '' || !character.description ? notDesc :
+                            character.description)}}</p>
                     </div>
 
                     <div class="col-12">
@@ -20,9 +22,11 @@
             <div style="position: absolute; margin-top: 240px;">
                 <div class="row col-12">Related Comics</div>
                 <div class="row">
-                    <div class="col-5" style="margin-top: 15px;" *ngFor="let comic of comicsToShow">
-                        <a href="#" (click)="open(mymodal, comic)">{{comic.name}}</a>
-
+                    <div class="col-6" style="margin-top: 15px;" *ngFor="let comic of comicsToShow">
+                        <div (click)="open(mymodal, comic)" >
+                            <app-url-arrow-comic #comicarrow [text]="comic.name">
+                            </app-url-arrow-comic>
+                        </div>
                         <ng-template #mymodal let-modal>
                             <!--<div class="modal-header">
                                 <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
