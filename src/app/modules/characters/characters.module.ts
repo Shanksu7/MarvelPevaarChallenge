@@ -4,10 +4,11 @@ import { CharactersListComponent } from './components/characters-list/characters
 import { CharacterCardInformationComponent } from './components/character-card-information/character-card-information.component';
 import { CommonMarvelModule } from '../common-marvel/common-marvel.module';
 import { ComicsModule } from '../comics/comics.module';
+import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
 
 
 @NgModule({
-  declarations: [CharactersListComponent, CharacterCardInformationComponent],
+  declarations: [CharactersListComponent, CharacterCardInformationComponent, CharacterDetailComponent],
   imports: [
     CommonModule,
     ComicsModule

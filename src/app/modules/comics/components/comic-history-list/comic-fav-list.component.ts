@@ -27,7 +27,7 @@ export class ComicFavoriteListComponent implements OnInit {
     console.log('re-load');
     this.favDeleted.emit($event.id);
     console.log($event);
-    //this.comics.splice($event, 1);
+    this.comics.splice($event, 1);
     this.load();
   }
 }

@@ -10,6 +10,7 @@ import { CharacterService } from './services/character.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RouterModule } from '@angular/router';
     NgbModule,
     PdfViewerModule,
     RouterModule,
+    BrowserAnimationsModule,
   ],
   providers: [CharacterService],
   bootstrap: [AppComponent]

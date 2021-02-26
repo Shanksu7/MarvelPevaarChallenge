@@ -9,14 +9,21 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { Router, RouterModule } from '@angular/router';
 import { CartComponent } from './components/cart/cart.component';
 import { HistoryComponent } from './components/history/history.component';
-
+import { ComicsModule } from '../comics/comics.module';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [FooterComponent, HeaderMenuComponent, PdfViewModalComponent, CartComponent, HistoryComponent],
   imports: [
     CommonModule,
     PdfViewerModule,
-    RouterModule
+    RouterModule,
+    ComicsModule,
+    MatSortModule,
+    MatTableModule,
+    MatInputModule
   ],
   exports: [FooterComponent, HeaderMenuComponent]
 })

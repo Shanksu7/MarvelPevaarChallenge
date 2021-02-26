@@ -40,14 +40,17 @@
   svg.material-icons:not(:last-child) {
     margin-right: 8px;
   }
-
-  /*{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 16px;
-  }*/
-
+  .column {
+    float: left;
+    width: 70.3%;
+    padding: 10px;
+  }
+  .column-side{
+    float: left;
+    width: 14.6%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
   .card-hero {
     border-radius: 10px;
     padding: 16px;

@@ -46,7 +46,7 @@ export class CharacterCardInformationComponent implements OnInit {
     this.favModal.load();
   }
   comicFavDel($comicId: number) {
-    this.favModal.load();
+    //this.favModal.load();
   }
 
   open(content, comic: ComicSummary) {

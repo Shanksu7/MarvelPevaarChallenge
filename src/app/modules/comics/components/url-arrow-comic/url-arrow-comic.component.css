@@ -8,6 +8,8 @@ span{
     cursor: pointer;
 }
 text{
-    white-space: nowrap !important;
+  white-space: nowrap !important;
   overflow: hidden !important;
+  margin-bottom: 2px;
+  margin-left: 2px;
 }

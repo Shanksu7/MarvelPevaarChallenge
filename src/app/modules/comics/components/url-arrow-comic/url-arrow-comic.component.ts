@@ -10,14 +10,14 @@ export class UrlArrowComicComponent implements OnInit {
   constructor() { }
   @Input() text: string;
   imgSrc: string = '';
-  color: string = 'black';
+  color: string = 'blue';
   ngOnInit(): void {
   }
 
   hoverLeave()
   {
     this.imgSrc = '';
-    this.color = 'black';
+    this.color = 'blue';
     console.log(this.imgSrc);
   }
   hover(){

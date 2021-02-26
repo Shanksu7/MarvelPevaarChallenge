@@ -11,11 +11,12 @@ export class CartService {
   getCart(): ComicPurchaseDetail[]{
     let _comics = localStorage.getItem(cartKey);
     if (_comics) {
-      let comicsMap = new Array<ComicPurchaseDetail>(JSON.parse(_comics));
+      let comicsMap = JSON.parse(_comics);
       let comics = [];
       comicsMap.forEach((val) => {
         comics.unshift(val);
       })
+      console.log(comics);
       return comics;
     }
     return [];

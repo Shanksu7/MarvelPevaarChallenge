@@ -6,7 +6,7 @@
                 alt="{{character.name}}.jpg" />
         </div>
         <div class="row">
-            <div class="col-7" style="position: absolute; margin-left: 220px;">
+            <div class="col-7" style="   margin-left: 220px;">
                 <div class="row">
                     <h3 class="name" class="col-12">{{character.name}}</h3>
                     <div class="ellipsis container-desc col-9">
@@ -19,8 +19,8 @@
                     </div>
                 </div>
             </div>
-            <div style="position: absolute; margin-top: 240px;">
-                <div class="row col-12 h4">Related Comics</div>
+            <div>
+                <div class="row col-12 h4 mt-2">Related Comics</div>
                 <div class="row">
                     <div class="col-12" style="margin-top: 15px;" *ngFor="let comic of comicsToShow">
                         <div (click)="open(mymodal, comic)" >
