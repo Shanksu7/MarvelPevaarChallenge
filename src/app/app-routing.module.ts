@@ -21,7 +21,7 @@ const routes: Routes = [
     component: HistoryComponent
   },
   {
-    path: 'cart',
+    path: 'orders',
     component: CartComponent
   },
   {

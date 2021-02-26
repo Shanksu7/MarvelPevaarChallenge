@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { CartService, ComicPurchaseDetail } from 'src/app/services/cart/cart.service';
 import { ComicService } from 'src/app/services/comic.service';
 import { ComicfavoritesService } from 'src/app/services/favs/comicfavorites.service';
 import Swal from 'sweetalert2';
@@ -22,7 +23,10 @@ export class ComicCharacterCardModalComponent implements OnInit {
   isFavorite: boolean;
   comicKey: string = 'favorite-comics';
   
-  constructor(private modalService: NgbModal, private comicService: ComicService, private comicFavService: ComicfavoritesService) { }
+  constructor(
+    private comicService: ComicService, 
+    private comicFavService: ComicfavoritesService,
+    private cartService: CartService) { }
 
   ngOnInit(): void {
     this.comicService.getComicFromUrl(this.comicData.resourceURI).subscribe(data =>    
@@ -76,7 +80,14 @@ export class ComicCharacterCardModalComponent implements OnInit {
       preConfirm: () => {
     return new Promise<void>((resolve, reject) => {
       setTimeout(() => {
-        console.log("Doing async operation");
+        let purchase: ComicPurchaseDetail = new ComicPurchaseDetail();
+        purchase.imgUrl = this.comic.thumbnail.path;
+        purchase.isDigital = $price.type != 'printPrice';
+        purchase.name = this.comic.title;
+        purchase.price = $price.price;
+        purchase.purchaseDate = new Date();
+        this.cartService.purchase(purchase);
+        console.log(this.cartService.getCart());
         Swal.fire('Now it\'s yours, just wait for it!', '', 'success');
         resolve()
       }, 3000)
