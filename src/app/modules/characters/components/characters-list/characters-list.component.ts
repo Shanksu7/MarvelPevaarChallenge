@@ -15,21 +15,52 @@ export class CharactersListComponent implements OnInit {
   characters: Character[];
 
   closeResult: string;
+
+  sortIndex: number = 1;
+  btnSortAlpha: string = 'A-Z';
+  offSet: number = 0;
   constructor(private characterService: CharacterService)
   {
-    let params = new SearchParams();
-    params.limit = 10;
-    //params.offset = 100;
-    let list = characterService.getPaginatedCharacters(params).subscribe(data => 
-      {
-        console.log(data)
-        this.characters = data.data.results;
-      });
   }
 
   ngOnInit(): void {
+    this.search();
+
   }
 
-  
+  search() {
+    let params = new SearchParams();
+    params.limit = 10;
+    params.offset = this.offSet;
+    this.characterService.getPaginatedCharacters(params).subscribe(data => 
+      {
+        console.log(data)
+      this.characters = data.data.results;
+      this.sort();
+      });
+  }
 
+  nextPage() {
+    this.offSet += 10;
+    this.search();
+  }
+
+  prevPage() {
+    this.offSet = this.offSet <= 10 ? 0 : this.offSet - 10;
+    this.search();
+  }
+
+  changeSort() {
+    this.sortIndex *= -1;
+    this.sort();    
+  }
+
+  sort() {
+    this.btnSortAlpha = this.sortIndex == 1 ? 'A-Z' : 'Z-A';
+    this.characters = this.characters.sort((a, b) => {
+      if(a.name < b.name) { return -1*this.sortIndex; }
+      if(a.name > b.name) { return 1*this.sortIndex; }
+      return 0;
+    })
+  }
 }

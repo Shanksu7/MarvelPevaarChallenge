@@ -17,9 +17,32 @@
             <img class="cha0racter-icon" src="../../../../../assets/icons/characters.png" />
             <span class="char-header">Characters</span>
         </div>
-        <div class="row"  style="margin-left: 40px;" >
+        <div class="col-12 row align-items-center">
+            <div class="col">
+            </div>
+            <div class="col" [ngStyle]="{'margin-right': '42px'}">
+                <img (click)="prevPage()" src="../../../../../assets/icons/btn_arrow_left.png" />
+
+                <img (click)="nextPage()" src="../../../../../assets/icons/btn_arrow_right.png" />
+            </div>
+        </div>
+        <div class="col-12">
+            <span class="char-header">Current Order</span>
+            <button class="btn btn-primary" (click)="changeSort()">{{btnSortAlpha}}</button>
+        </div>
+        <div class="row" style="margin-left: 40px;">
             <div class="col-6" *ngFor="let character of characters">
-                <app-character-card-information [favModal]="favs" [character]="character"></app-character-card-information>   
+                <app-character-card-information [favModal]="favs" [character]="character">
+                </app-character-card-information>
+            </div>
+        </div>
+        <div class="col-12 row align-items-center">
+            <div class="col">
+            </div>
+            <div class="col" [ngStyle]="{'margin-right': '42px'}">
+                <img (click)="prevPage()" src="../../../../../assets/icons/btn_arrow_left.png" />
+
+                <img (click)="nextPage()" src="../../../../../assets/icons/btn_arrow_right.png" />
             </div>
         </div>
     </div>

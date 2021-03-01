@@ -4,11 +4,12 @@ import { ComicCharacterCardModalComponent } from './components/comic-character-c
 import { UrlArrowComicComponent } from './components/url-arrow-comic/url-arrow-comic.component';
 import { ComicFavoriteListComponent } from './components/comic-history-list/comic-fav-list.component';
 import { ComicHistoryListCardComponent } from './components/comic-history-list-card/comic-history-list-card.component';
+import { ComicFavoritesComponent } from './components/comic-favorites/comic-favorites.component';
 
 
 
 @NgModule({
-  declarations: [ComicCharacterCardModalComponent, UrlArrowComicComponent, ComicFavoriteListComponent, ComicHistoryListCardComponent],
+  declarations: [ComicCharacterCardModalComponent, UrlArrowComicComponent, ComicFavoriteListComponent, ComicHistoryListCardComponent, ComicFavoritesComponent],
   imports: [
     CommonModule
   ],

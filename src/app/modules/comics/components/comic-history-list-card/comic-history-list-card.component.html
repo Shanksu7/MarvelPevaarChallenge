@@ -3,5 +3,5 @@
             alt="{{comic.name}}.jpg"/>
         <img class="delete-button" src="../../../../../assets/icons/btn-delete.png"  (click)="onDelete()">
 
-        <p>{{comic.name}}</p>
+        <p [ngStyle]="{'color': color}">{{comic.name}}</p>
     </div>

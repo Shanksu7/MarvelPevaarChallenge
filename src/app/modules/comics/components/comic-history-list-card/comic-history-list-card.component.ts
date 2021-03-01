@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 export class ComicHistoryListCardComponent implements OnInit {
 
   @Input() comic: any;
+  @Input() color: string = 'white';
   @Output() favDelete = new EventEmitter<number>();
   constructor(private comicFavService: ComicfavoritesService) { }
 
