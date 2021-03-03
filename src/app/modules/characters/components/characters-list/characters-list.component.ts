@@ -13,11 +13,15 @@ import { CharacterDataWrapper } from '../../classes/character-data-wrapper';
 })
 export class CharactersListComponent implements OnInit {
 
+  foods = [
+    {value: 'A-Z', viewValue: 'A-Z'},
+    {value: 'Z-A', viewValue: 'Z-A'},
+  ];
+  selected: any;
   characters: Character[];
 
   closeResult: string;
 
-  sortIndex: number = 1;
   btnSortAlpha: string = 'A-Z';
   offSet: number = 0;
   constructor(private characterService: CharacterService)
@@ -50,21 +54,33 @@ export class CharactersListComponent implements OnInit {
     this.search();
   }
 
-  changeSort() {
-    this.sortIndex *= -1;
-    this.sort();    
-  }
-
   sort() {
-    this.btnSortAlpha = this.sortIndex == 1 ? 'A-Z' : 'Z-A';
-    this.characters = this.characters.sort((a, b) => {
-      if(a.name < b.name) { return -1*this.sortIndex; }
-      if(a.name > b.name) { return 1*this.sortIndex; }
-      return 0;
-    })
+   
+    if (this.selected == 1 || this.selected == 2) {
+      console.log('name sort');
+      let sortIndex = this.selected == 1 ? 1 : -1;
+      this.characters = this.characters.sort((a, b) => {
+        if(a.name < b.name) { return -1 * sortIndex; }
+        if(a.name > b.name) { return  1 * sortIndex; }
+        return 0;
+      })
+    }
+    else {
+      let sortIndex = this.selected == 3 ? 1 : -1;
+      this.characters = this.characters.sort((a, b) => {
+        if(a.modified < b.modified) { return -1 * sortIndex; }
+        if(a.modified > b.modified) { return  1 * sortIndex; }
+        return 0;
+      })
+    }
+    console.log(this.selected);
   }
 
   searchButton(search) {
     Swal.fire('searching...', search);
+  }
+
+  onChange(search) {
+    Swal.fire('dropdown...', search);
   }
 }

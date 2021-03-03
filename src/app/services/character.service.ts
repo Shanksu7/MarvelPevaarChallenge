@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ServiceConstants, getParams, url } from '../constants/service-constants';
+import { getParams, url } from '../constants/service-constants';
 import { CharacterDataWrapper } from '../modules/characters/classes/character-data-wrapper';
 import { HttpClient } from '@angular/common/http'
 import { SearchParams } from '../modules/common-marvel/classes/search-params';

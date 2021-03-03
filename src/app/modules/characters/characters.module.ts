@@ -5,13 +5,15 @@ import { CharacterCardInformationComponent } from './components/character-card-i
 import { CommonMarvelModule } from '../common-marvel/common-marvel.module';
 import { ComicsModule } from '../comics/comics.module';
 import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
   declarations: [CharactersListComponent, CharacterCardInformationComponent, CharacterDetailComponent],
   imports: [
     CommonModule,
-    ComicsModule
+    ComicsModule,
+    MatSelectModule
   ],
   exports: [CharacterCardInformationComponent]
 })

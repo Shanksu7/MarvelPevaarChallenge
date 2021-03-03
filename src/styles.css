@@ -2,3 +2,10 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face{
+    font-family: marvel-regular;
+    src: url('../src/fonts/BlackWidowMovie-d95Rg.ttf');
+    font-style: normal;
+    font-weight: 100;
+}

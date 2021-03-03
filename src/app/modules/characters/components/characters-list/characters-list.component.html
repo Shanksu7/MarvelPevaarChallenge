@@ -1,22 +1,9 @@
-<div class="main-container">
-    <div class="container">
-        <div class="row">
-
-
-        </div>
-
-    </div>
-</div>
-
 
 <div class="row">
     <div class="column-side">
     </div>
     <div class="column" style="background-color:rgb(187, 187, 187, 0.5);">
-        <div class="col-12">
-            <img class="cha0racter-icon" src="../../../../../assets/icons/characters.png" />
-            <span class="char-header">Characters</span>
-        </div>
+        
         <div class="col-12">
             <div class="example" style="margin:auto;max-width:300px">
                 <input #search (keyup.enter)="searchButton(search.value)" type="text" placeholder="Search..">
@@ -24,13 +11,24 @@
             </div>
         </div>
         <div class="row filters">
-          
-            <div class="col-12">
-                <span class="char-header">Order: </span>
-                <button class="btn btn-primary" (click)="changeSort()">{{btnSortAlpha}}</button>
-            </div>
-            <div class="col-12">
-                <span class="char-header">Current Order</span>
+            <div style="margin-left: auto; margin-right: 106px;">
+                <div class="col-12">
+                    <img class="cha0racter-icon" src="../../../../../assets/icons/characters.png" />
+                    <span class="char-header">Characters</span>
+                </div>
+                <div class="col-12">
+                    <div style="max-width:222px; padding:10px; max-height: 73px;">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Order By</mat-label>
+                            <mat-select [(value)]="selected" (selectionChange)="sort()">
+                                <mat-option value="1">A - Z</mat-option>
+                                <mat-option value="2">Z - A</mat-option>
+                                <mat-option value="3">Date Ascending</mat-option>
+                                <mat-option value="4">Date Descending</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row" style="margin-left: 40px;">
