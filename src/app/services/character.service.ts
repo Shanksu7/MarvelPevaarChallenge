@@ -13,7 +13,6 @@ export class CharacterService {
 
   constructor(private http: HttpClient)
   {
-    console.log(getParams());
   }
 
   endpoint(t: string = '', extraParams?: SearchParams) {
@@ -23,7 +22,6 @@ export class CharacterService {
 
   getPaginatedCharacters(params?: SearchParams) : Observable<CharacterDataWrapper> {
     var url = this.endpoint('', params);
-    console.log(url);
     return this.http.get<CharacterDataWrapper>(url.replace('http:', 'https:'));
   }
 

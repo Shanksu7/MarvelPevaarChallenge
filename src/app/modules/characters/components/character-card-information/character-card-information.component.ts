@@ -22,13 +22,11 @@ export class CharacterCardInformationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.character);
     for (let i = 0; i < this.character.comics?.items?.length && i < 4; i++)
       this.comicsToShow.push(this.character.comics.items[i]);
   }
 
   goToLink(url) {
-    console.log(url);
     Swal.fire(url);
     //ref here https://www.npmjs.com/package/sweetalert2
     //window.open(url, "_blank");
@@ -40,7 +38,6 @@ export class CharacterCardInformationComponent implements OnInit {
 
   viewMore() {
     Swal.fire('redirect to id ' + this.character.id, '', 'info');
-    console.log('view more');
   }
   comicFavAdded($comicId: number) {
     this.favModal.load();

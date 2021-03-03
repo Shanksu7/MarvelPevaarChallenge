@@ -18,11 +18,9 @@ export class UrlArrowComicComponent implements OnInit {
   {
     this.imgSrc = '';
     this.color = 'blue';
-    console.log(this.imgSrc);
   }
   hover(){
     this.color = 'red';
     this.imgSrc='../../../../../assets/icons/link-arrow.png';
-    console.log(this.imgSrc);
   }
 }

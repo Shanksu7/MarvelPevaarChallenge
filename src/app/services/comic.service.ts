@@ -13,7 +13,6 @@ export class ComicService {
   constructor(private http: HttpClient) { }
 
   getComicFromUrl(url?: string, params?: SearchParams) : Observable<ComicDataWrapper> {
-    console.log(url + getParams());
     return this.http.get<ComicDataWrapper>(url.replace('http:', 'https:') + getParams());
   }
 }

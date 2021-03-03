@@ -41,3 +41,57 @@ margin-right: 10%;
   color: white;
   font-size: 20px;
 }
+
+.page-arrow {
+  cursor: pointer;
+}
+
+.arrow-container{
+  margin-right: 102px;
+}
+
+.filters{
+  margin-left: 42px;
+}
+/**/
+
+
+div.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: transparent;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: black;
+  color: white;
+}
+
+div.example input:focus {
+  border-color: white;
+  color: white;
+}
+div.example ::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+div.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: transparent;
+  color: white;
+  font-size: 17px;
+  border: 0px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+
+div.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}

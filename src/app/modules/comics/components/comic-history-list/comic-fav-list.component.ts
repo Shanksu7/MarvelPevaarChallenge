@@ -8,12 +8,11 @@ import { ComicfavoritesService } from 'src/app/services/favs/comicfavorites.serv
 })
 export class ComicFavoriteListComponent implements OnInit {
 
-  constructor(private comicFavService: ComicfavoritesService) { console.log('aaa'); }
+  constructor(private comicFavService: ComicfavoritesService) {  }
   @Output() favDeleted = new EventEmitter<any>();
   comicKey: string = 'favorite-comics';
   comics: any;
   ngOnInit(): void {
-    console.log('aaa');
     this.load();
   }
 
@@ -21,12 +20,10 @@ export class ComicFavoriteListComponent implements OnInit {
     this.comics = this.comicFavService.getList();
   }
 
-  get(item) { console.log(item) }
+  get(item) {  }
 
   onFavDelete($event) {
-    console.log('re-load');
     this.favDeleted.emit($event.id);
-    console.log($event);
     this.comics.splice($event, 1);
     this.load();
   }

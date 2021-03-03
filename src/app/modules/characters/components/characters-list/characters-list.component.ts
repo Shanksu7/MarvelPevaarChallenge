@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SearchParams } from 'src/app/modules/common-marvel/classes/search-params';
 import { DataWrapper } from 'src/app/modules/common-marvel/interface/data-wrapper';
 import { CharacterService } from 'src/app/services/character.service';
+import Swal from 'sweetalert2';
 import { Character } from '../../classes/character';
 import { CharacterDataWrapper } from '../../classes/character-data-wrapper';
 
@@ -34,7 +35,6 @@ export class CharactersListComponent implements OnInit {
     params.offset = this.offSet;
     this.characterService.getPaginatedCharacters(params).subscribe(data => 
       {
-        console.log(data)
       this.characters = data.data.results;
       this.sort();
       });
@@ -62,5 +62,9 @@ export class CharactersListComponent implements OnInit {
       if(a.name > b.name) { return 1*this.sortIndex; }
       return 0;
     })
+  }
+
+  searchButton(search) {
+    Swal.fire('searching...', search);
   }
 }

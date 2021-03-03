@@ -34,11 +34,8 @@ export class ComicCharacterCardModalComponent implements OnInit {
       let _comic = data.data.results[0];
 
       let arr = new Map(JSON.parse(localStorage.getItem(this.comicKey)));      
-      console.log('localStorage');
-      console.log(localStorage.getItem(this.comicKey));
       this.isFavorite = !!arr.get(_comic.id);
       this.comic = _comic;
-      console.log(this.comic);     
     });
     
   }
@@ -46,7 +43,6 @@ export class ComicCharacterCardModalComponent implements OnInit {
   switchFavorites() {
     
     let arr = localStorage.getItem(this.comicKey);
-    console.log(arr);
 
     if (!this.isFavorite) {
       this.comicFavService.addFavorite(this.comic);
@@ -60,7 +56,6 @@ export class ComicCharacterCardModalComponent implements OnInit {
   }
 
   buy($price) {
-    console.log($price);
     let image = `<img class="profile-pic" src="${this.comic.thumbnail.path}/portrait_xlarge.${this.comic.thumbnail.extension}"
     alt="${this.comicData.name}.jpg" /><br><br>`
     let address = $price.type == 'printPrice' ? 'Comic will be delivered to your address' : 'Comic will be activated for you to read in some hours'
@@ -87,7 +82,6 @@ export class ComicCharacterCardModalComponent implements OnInit {
         purchase.price = $price.price;
         purchase.purchaseDate = new Date();
         this.cartService.purchase(purchase);
-        console.log(this.cartService.getCart());
         Swal.fire('Now it\'s yours, just wait for it!', '', 'success');
         resolve()
       }, 3000)

@@ -18,7 +18,6 @@ export class CartComponent implements OnInit {
   
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value.toLocaleLowerCase();
-    console.log(filterValue);
     if (!filterValue || filterValue == '')
       this.cart = this.cartOriginal;
     else

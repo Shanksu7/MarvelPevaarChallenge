@@ -17,18 +17,21 @@
             <img class="cha0racter-icon" src="../../../../../assets/icons/characters.png" />
             <span class="char-header">Characters</span>
         </div>
-        <div class="col-12 row align-items-center">
-            <div class="col">
-            </div>
-            <div class="col" [ngStyle]="{'margin-right': '42px'}">
-                <img (click)="prevPage()" src="../../../../../assets/icons/btn_arrow_left.png" />
-
-                <img (click)="nextPage()" src="../../../../../assets/icons/btn_arrow_right.png" />
+        <div class="col-12">
+            <div class="example" style="margin:auto;max-width:300px">
+                <input #search (keyup.enter)="searchButton(search.value)" type="text" placeholder="Search..">
+                <button type="submit" (click)="searchButton(search.value)"><i class="fa fa-search"></i></button>
             </div>
         </div>
-        <div class="col-12">
-            <span class="char-header">Current Order</span>
-            <button class="btn btn-primary" (click)="changeSort()">{{btnSortAlpha}}</button>
+        <div class="row filters">
+          
+            <div class="col-12">
+                <span class="char-header">Order: </span>
+                <button class="btn btn-primary" (click)="changeSort()">{{btnSortAlpha}}</button>
+            </div>
+            <div class="col-12">
+                <span class="char-header">Current Order</span>
+            </div>
         </div>
         <div class="row" style="margin-left: 40px;">
             <div class="col-6" *ngFor="let character of characters">
@@ -39,10 +42,15 @@
         <div class="col-12 row align-items-center">
             <div class="col">
             </div>
-            <div class="col" [ngStyle]="{'margin-right': '42px'}">
-                <img (click)="prevPage()" src="../../../../../assets/icons/btn_arrow_left.png" />
-
-                <img (click)="nextPage()" src="../../../../../assets/icons/btn_arrow_right.png" />
+            <div class="col" [ngStyle]="{'margin-right': '102px'}">
+                <div class="arrow-container">
+                    <div class="page-arrow btn">
+                        <img (click)="prevPage()" src="../../../../../assets/icons/btn_arrow_left.png" />
+                    </div>
+                    <div class="page-arrow btn">
+                        <img (click)="nextPage()" src="../../../../../assets/icons/btn_arrow_right.png" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>

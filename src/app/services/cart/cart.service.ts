@@ -16,7 +16,6 @@ export class CartService {
       comicsMap.forEach((val) => {
         comics.unshift(val);
       })
-      console.log(comics);
       return comics;
     }
     return [];
