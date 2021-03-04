@@ -21,6 +21,7 @@ export class CharactersListComponent implements OnInit {
   offSet: number = 0;
   startWith: string = '';
   nameFilter: string = '';
+  lastSearch: string = '';
   constructor(private characterService: CharacterService)
   {
   }
@@ -32,6 +33,7 @@ export class CharactersListComponent implements OnInit {
 
   search() {
     let params = new SearchParams();
+    this.lastSearch = this.startWith;
     params.limit = 10;
     params.nameStartsWith = this.startWith && this.startWith != '' ? this.startWith : null;
     params.offset = this.offSet;
