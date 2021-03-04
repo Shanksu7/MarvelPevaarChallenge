@@ -27,8 +27,6 @@ import { MatSelectModule } from '@angular/material/select'
     PdfViewerModule,
     RouterModule,
     BrowserAnimationsModule,
-    MatSelectModule,
-    FormsModule
   ],
   providers: [CharacterService],
   bootstrap: [AppComponent]

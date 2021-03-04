@@ -1,5 +1,4 @@
 @import '../../../../app.component.css';
-@import '../../../../../styles.css';
 
 * {
     box-sizing: border-box;
@@ -25,15 +24,6 @@
     clear: both;
   }
 
-.main-container{
-margin-left: 10%;
-margin-right: 10%;
-}
-
-.hero-card
-{
-    margin-top: 20px;
-}
 
 .char-header{
   padding-top: 10px;
@@ -60,12 +50,6 @@ margin-right: 10%;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-/**/
-
-.mat-select-panel {
-  background: red;
-}
-
 div.searcher input[type=text] {
   padding: 10px;
   font-size: 17px;
