@@ -35,12 +35,30 @@ export class CharactersListComponent implements OnInit {
     params.limit = 10;
     params.nameStartsWith = this.startWith && this.startWith != '' ? this.startWith : null;
     params.offset = this.offSet;
+    console.log(this.selected);
+      switch(this.selected) {
+        case '1':
+          params.orderBy = 'name'  
+          break;
+        case '2':
+          params.orderBy = '-name'
+          break;          
+        case '3':
+          params.orderBy = 'modified'
+          break;
+        case '4':
+          params.orderBy = '-modified'
+          break;
+        default:
+          params.orderBy = null;
+          break;
+    } 
+    console.log('data');
+    console.log(params);
     this.characterService.getPaginatedCharacters(params).subscribe(data => 
     {
       this.charactersOriginal = data.data.results;
       this.characters = data.data.results;
-      
-      this.sort();
       });
   }
 
@@ -55,7 +73,7 @@ export class CharactersListComponent implements OnInit {
   }
 
   sort() {
-   
+   /*
     if (this.selected == 1 || this.selected == 2) {
       console.log('name sort');
       let sortIndex = this.selected == 1 ? 1 : -1;
@@ -73,11 +91,11 @@ export class CharactersListComponent implements OnInit {
         return 0;
       })
     }
-    console.log(this.selected);
+    console.log(this.selected);*/
+    this.search();
   }
 
-  searchButton(search) {
-    this.startWith = search;
+  searchButton() {
     this.search();
   }
 
@@ -91,7 +109,7 @@ export class CharactersListComponent implements OnInit {
     else {
       this.characters = this.charactersOriginal.filter(x => x.name.toLowerCase().includes(name.toLowerCase()))
     }
-    this.sort();
+    //this.sort();
 
   }
 

@@ -6,8 +6,8 @@
         
         <div class="col-12">
             <div class="searcher" style="margin:auto;max-width:300px">
-                <input #search (keyup.enter)="searchButton(search.value)" type="text" placeholder="Search..">
-                <button type="submit" (click)="searchButton(search.value)"><i class="fa fa-search"></i></button>
+                <input #search [(ngModel)]="startWith" (keyup.enter)="searchButton()" type="text" placeholder="Search..">
+                <button type="submit" (click)="searchButton()"><i class="fa fa-search"></i></button>
                 
             </div>
         </div>
