@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharactersModule } from './modules/characters/characters.module';
@@ -27,7 +27,8 @@ import { MatSelectModule } from '@angular/material/select'
     PdfViewerModule,
     RouterModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule
   ],
   providers: [CharacterService],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CharactersListComponent } from './components/characters-list/characters-list.component';
 import { CharacterCardInformationComponent } from './components/character-card-information/character-card-information.component';
@@ -13,7 +14,8 @@ import { MatSelectModule } from '@angular/material/select';
   imports: [
     CommonModule,
     ComicsModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule
   ],
   exports: [CharacterCardInformationComponent]
 })

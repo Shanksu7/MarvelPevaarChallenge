@@ -80,7 +80,8 @@ export class CharactersListComponent implements OnInit {
     this.search();
   }
 
-  typeFilter(name: string) {
+  typeFilter() {
+    let name = this.startWith;
     console.log(name);
     if (!name || name.length == 0)
     {
@@ -91,5 +92,16 @@ export class CharactersListComponent implements OnInit {
     }
     this.sort();
 
+  }
+
+  onClear() {
+    this.clear();
+    this.search();
+  }
+
+  clear() {
+    this.selected = 0;
+    this.offSet = 0;
+    this.startWith = '';
   }
 }
