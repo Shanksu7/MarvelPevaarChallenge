@@ -15,14 +15,19 @@ export class CharacterService {
   {
   }
 
-  endpoint(t: string = '', extraParams?: SearchParams) {
-    return url + 'characters' + t + getParams() + (extraParams ? extraParams.toParams() : '');
+  private endpoint(t: string = '', extraParams?: SearchParams) {
+    return (url + 'characters' + t + getParams() + (extraParams ? extraParams.toParams() : '')).replace('http:', 'https:');
     
   }
 
   getPaginatedCharacters(params?: SearchParams) : Observable<CharacterDataWrapper> {
     var url = this.endpoint('', params);
-    return this.http.get<CharacterDataWrapper>(url.replace('http:', 'https:'));
+    return this.http.get<CharacterDataWrapper>(url);
+  }
+
+  getCharacter(id: number) {
+    var url = this.endpoint(`/${id}`, null);
+    return this.http.get<CharacterDataWrapper>(url);
   }
 
 }

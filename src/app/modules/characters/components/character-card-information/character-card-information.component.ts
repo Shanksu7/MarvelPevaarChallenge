@@ -4,6 +4,7 @@ import { Character } from '../../classes/character';
 import Swal from 'sweetalert2'
 import { ComicSummary } from 'src/app/modules/comics/classes/comic-summary';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-character-card-information',
@@ -17,7 +18,7 @@ export class CharacterCardInformationComponent implements OnInit {
   comicsToShow: ComicSummary[] = [];
   closeResult: string;
   notDesc = '<no description>';
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, private router: Router) {
 
   }
 
@@ -37,7 +38,8 @@ export class CharacterCardInformationComponent implements OnInit {
   }
 
   viewMore() {
-    Swal.fire('redirect to id ' + this.character.id, '', 'info');
+    //Swal.fire('redirect to id ' + this.character.id, '', 'info');
+    this.router.navigate(['character', this.character.id]);
   }
   comicFavAdded($comicId: number) {
     this.favModal.load();
