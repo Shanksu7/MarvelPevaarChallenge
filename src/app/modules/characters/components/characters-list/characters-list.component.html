@@ -1,4 +1,4 @@
-<div>
+<div (wheel)="onScroll($event)">
     <div class="column-side">
         <app-comic-fav-list #favs></app-comic-fav-list>
     </div>
@@ -16,7 +16,7 @@
         <div class="col-12 row align-items-center">
             <div class="col">
             </div>
-            <div class="col" [ngStyle]="{'margin-right': '102px'}">
+            <div class="col" [ngStyle]="{'margin-right': '129px'}">
                 <div class="arrow-container">
                     <div class="page-arrow btn">
                         <img (click)="prevPage()" src="../../../../../assets/icons/btn_arrow_left.png" />
@@ -31,8 +31,8 @@
     <div class="column-right">
 
 
-        <div class="row filters"  style="position: fixed;">
-            <div>
+        <div class="row" style="position: fixed; margin-left: 10px;">
+            <div class="col -12 filters">
                 <div class="col-12">
                     <img class="cha0racter-icon" src="../../../../../assets/icons/characters.png" />
                     <span class="char-header" style="color: black !important;">Filter </span>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-12" *ngIf="lastSearch">
                     <div class="searcher" style="margin:auto;max-width:300px">
-                        <span style="color:gray; font-style: italic;">Current Search: {{startWith}} </span>
+                        <span style="color:gray; font-style: italic;">Current Search: {{lastSearch}} </span>
                     </div>
                 </div>
                 <!--<div class="col-12 searcherList">
@@ -69,8 +69,12 @@
                     <input type="button" class="btn btn-primary" value="Clear" (click)="onClear()"
                         style="margin: auto; width: 100%;">
                 </div>
-
+                
             </div>
+            <div class="col-12" style="height: 100px;" >
+                <img (click)="toTop()" *ngIf="showToTop" class="cha0racter-icon" src="../../../../../assets/icons/up-arrow-icon-top.png" style="height: 100%;padding-left: 100px;cursor:pointer;"/>
+            </div>
+            
         </div>
 
     </div>

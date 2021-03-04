@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { SearchParams } from 'src/app/modules/common-marvel/classes/search-params';
 import { DataWrapper } from 'src/app/modules/common-marvel/interface/data-wrapper';
 import { CharacterService } from 'src/app/services/character.service';
@@ -21,6 +21,7 @@ export class CharactersListComponent implements OnInit {
   startWith: string = '';
   nameFilter: string = '';
   lastSearch: string = '';
+  showToTop: boolean = false;
   constructor(private characterService: CharacterService)
   {
   }
@@ -123,5 +124,21 @@ export class CharactersListComponent implements OnInit {
     this.selected = 0;
     this.offSet = 0;
     this.startWith = '';
+  }
+
+  onScroll($event:Event){
+    console.log(window.pageYOffset);
+    console.log(window.innerHeight);
+    console.log(window.outerHeight);
+    console.log('----------------');
+    if (window.pageYOffset > 150)
+      this.showToTop = true;
+    else
+      this.showToTop = false;
+      
+  }
+  toTop() {
+    window.scroll(0, 0);
+    this.showToTop = false;
   }
 }
