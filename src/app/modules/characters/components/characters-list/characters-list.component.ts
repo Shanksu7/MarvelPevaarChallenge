@@ -20,6 +20,7 @@ export class CharactersListComponent implements OnInit {
   closeResult: string;
   offSet: number = 0;
   startWith: string = '';
+  nameFilter: string = '';
   constructor(private characterService: CharacterService)
   {
   }
@@ -81,7 +82,7 @@ export class CharactersListComponent implements OnInit {
   }
 
   typeFilter() {
-    let name = this.startWith;
+    let name = this.nameFilter;
     console.log(name);
     if (!name || name.length == 0)
     {

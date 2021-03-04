@@ -2,9 +2,13 @@
     color: white;
     margin-left: 20px;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 200;
 }
 
 .fav-text{
-    padding-left: 20px;
+    padding-top: 12px;
+    padding-left: 9px;
+    font-size: 33px;
+    position: absolute;
+    font-family: marvel-regular;
 }

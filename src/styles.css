@@ -9,3 +9,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-style: normal;
     font-weight: 100;
 }
+
+@font-face{
+    font-family: marvel-spider;
+    src: url('../src/fonts/Mightyspidey-pmaa.ttf');
+    font-style: normal;
+    font-weight: 100;
+}
