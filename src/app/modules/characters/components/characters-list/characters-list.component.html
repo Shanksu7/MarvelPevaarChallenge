@@ -5,21 +5,26 @@
     <div class="column" style="background-color:rgb(187, 187, 187, 0.5);">
         
         <div class="col-12">
-            <div class="example" style="margin:auto;max-width:300px">
+            <div class="searcher" style="margin:auto;max-width:300px">
                 <input #search (keyup.enter)="searchButton(search.value)" type="text" placeholder="Search..">
                 <button type="submit" (click)="searchButton(search.value)"><i class="fa fa-search"></i></button>
+                
             </div>
         </div>
         <div class="row filters">
             <div style="margin-left: auto; margin-right: 106px;">
                 <div class="col-12">
                     <img class="cha0racter-icon" src="../../../../../assets/icons/characters.png" />
-                    <span class="char-header">Characters</span>
+                    <span class="char-header">Characters {{counter}} </span>
+                    <span class="char-header">{{counter}} </span>
+                </div>
+                <div class="col-12 searcherList">
+                    <input #searchList (keyup)="typeFilter(searchList.value)" type="text" placeholder="Filter list..">
                 </div>
                 <div class="col-12">
                     <div style="max-width:222px; padding:10px; max-height: 73px;">
                         <mat-form-field appearance="fill">
-                            <mat-label>Order By</mat-label>
+                            <mat-label>Order By  </mat-label>
                             <mat-select [(value)]="selected" (selectionChange)="sort()">
                                 <mat-option value="1">A - Z</mat-option>
                                 <mat-option value="2">Z - A</mat-option>
@@ -29,6 +34,7 @@
                         </mat-form-field>
                     </div>
                 </div>
+               
             </div>
         </div>
         <div class="row" style="margin-left: 40px;">

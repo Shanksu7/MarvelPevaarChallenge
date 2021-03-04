@@ -1,5 +1,5 @@
 @import '../../../../app.component.css';
-@import '../../../../../styles.css'
+@import '../../../../../styles.css';
 
 * {
     box-sizing: border-box;
@@ -66,7 +66,7 @@ margin-right: 10%;
   background: red;
 }
 
-div.example input[type=text] {
+div.searcher input[type=text] {
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
@@ -79,15 +79,15 @@ div.example input[type=text] {
   color: white;
 }
 
-div.example input:focus {
+div.searcher input:focus {
   border-color: white;
   color: white;
 }
-div.example ::placeholder {
+div.searcher ::placeholder {
   color: white;
   opacity: 1; /* Firefox */
 }
-div.example button {
+div.searcher button {
   float: left;
   width: 20%;
   padding: 10px;
@@ -100,7 +100,37 @@ div.example button {
 }
 
 
-div.example::after {
+div.searcher::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.searcherList{
+  margin-left: 10px;
+}
+.searcherList input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: transparent;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: black;
+  color: black;
+}
+
+.searcherList input:focus {
+  border-color: black;
+  color:gray;
+}
+.searcherList ::placeholder {
+  color: gray;
+  opacity: 1; /* Firefox */
+}
+.searcherList::after {
   content: "";
   clear: both;
   display: table;

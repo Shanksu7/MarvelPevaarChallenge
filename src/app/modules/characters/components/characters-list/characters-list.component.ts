@@ -13,17 +13,13 @@ import { CharacterDataWrapper } from '../../classes/character-data-wrapper';
 })
 export class CharactersListComponent implements OnInit {
 
-  foods = [
-    {value: 'A-Z', viewValue: 'A-Z'},
-    {value: 'Z-A', viewValue: 'Z-A'},
-  ];
+  counter: number = 0;
   selected: any;
   characters: Character[];
-
+  charactersOriginal: Character[];
   closeResult: string;
-
-  btnSortAlpha: string = 'A-Z';
   offSet: number = 0;
+  startWith: string = '';
   constructor(private characterService: CharacterService)
   {
   }
@@ -36,10 +32,13 @@ export class CharactersListComponent implements OnInit {
   search() {
     let params = new SearchParams();
     params.limit = 10;
+    params.nameStartsWith = this.startWith && this.startWith != '' ? this.startWith : null;
     params.offset = this.offSet;
     this.characterService.getPaginatedCharacters(params).subscribe(data => 
-      {
+    {
+      this.charactersOriginal = data.data.results;
       this.characters = data.data.results;
+      
       this.sort();
       });
   }
@@ -77,10 +76,20 @@ export class CharactersListComponent implements OnInit {
   }
 
   searchButton(search) {
-    Swal.fire('searching...', search);
+    this.startWith = search;
+    this.search();
   }
 
-  onChange(search) {
-    Swal.fire('dropdown...', search);
+  typeFilter(name: string) {
+    console.log(name);
+    if (!name || name.length == 0)
+    {
+      this.characters = this.charactersOriginal;
+    }
+    else {
+      this.characters = this.charactersOriginal.filter(x => x.name.toLowerCase().includes(name.toLowerCase()))
+    }
+    this.sort();
+
   }
 }
