@@ -1,50 +1,13 @@
-
-<div class="row">
+<div>
     <div class="column-side">
+        <app-comic-fav-list #favs></app-comic-fav-list>
     </div>
     <div class="column" style="background-color:rgb(187, 187, 187, 0.5);">
-        
         <div class="col-12">
-            <div class="searcher" style="margin:auto;max-width:300px">
-                <input #search [(ngModel)]="startWith" (keyup.enter)="searchButton()" type="text" placeholder="Search..">
-                <button type="submit" (click)="searchButton()"><i class="fa fa-search"></i></button>                
-            </div>
+            <img class="cha0racter-icon" src="../../../../../assets/icons/characters.png" />
+            <span class="char-header">Characters </span>
         </div>
-        <div class="col-12" *ngIf="lastSearch">
-            <div class="searcher" style="margin:auto;max-width:300px">
-              <span style="color:antiquewhite; font-style: italic;">Current Search: {{startWith}} </span>            
-            </div>
-        </div>
-        <div class="row filters">
-            <div style="margin-left: auto; margin-right: 106px;">
-                <div class="col-12">
-                    <img class="cha0racter-icon" src="../../../../../assets/icons/characters.png" />
-                    <span class="char-header">Characters {{counter}} </span>
-                    <span class="char-header">{{counter}} </span>
-                </div>
-                <div class="col-12 searcherList">
-                    <input #searchList [(ngModel)]="nameFilter" (keyup)="typeFilter()" type="text" placeholder="Filter list..">
-                </div>
-                <div class="col-12">
-                    <div style="max-width:222px; padding:10px; max-height: 73px;">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Order By  </mat-label>
-                            <mat-select [(value)]="selected" (selectionChange)="sort()">
-                                <mat-option value="1">A - Z</mat-option>
-                                <mat-option value="2">Z - A</mat-option>
-                                <mat-option value="3">Date Ascending</mat-option>
-                                <mat-option value="4">Date Descending</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div>
-                    <input type="button" class="btn btn-primary" value="Clear" (click)="onClear()" style="margin-left: 25px;" >
-                </div>
-               
-            </div>
-        </div>
-        <div class="row" style="margin-left: 40px;">
+        <div class="row" style="margin-left: -4px;">
             <div class="col-6" *ngFor="let character of characters">
                 <app-character-card-information [favModal]="favs" [character]="character">
                 </app-character-card-information>
@@ -65,7 +28,50 @@
             </div>
         </div>
     </div>
-    <div class="column-side">
-        <app-comic-fav-list #favs></app-comic-fav-list>
+    <div class="column-right">
+
+
+        <div class="row filters"  style="position: fixed;">
+            <div>
+                <div class="col-12">
+                    <img class="cha0racter-icon" src="../../../../../assets/icons/characters.png" />
+                    <span class="char-header" style="color: black !important;">Filter </span>
+                </div>
+                <div class="col-12">
+                    <div class="searcherList">
+                        <input #search [(ngModel)]="startWith" (keyup.enter)="searchButton()" type="text"
+                            placeholder="Name start with...">
+                    </div>
+                </div>
+                <div class="col-12" *ngIf="lastSearch">
+                    <div class="searcher" style="margin:auto;max-width:300px">
+                        <span style="color:gray; font-style: italic;">Current Search: {{startWith}} </span>
+                    </div>
+                </div>
+                <!--<div class="col-12 searcherList">
+                    <input #searchList [(ngModel)]="nameFilter" (keyup)="typeFilter()" type="text"
+                        placeholder="Filter list..">
+                </div>-->
+                <div class="col-12">
+                    <div style="max-width:222px; padding:10px; max-height: 73px;">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Order By </mat-label>
+                            <mat-select [(value)]="selected" (selectionChange)="sort()">
+                                <mat-option value="1">A - Z</mat-option>
+                                <mat-option value="2">Z - A</mat-option>
+                                <mat-option value="3">Date Ascending</mat-option>
+                                <mat-option value="4">Date Descending</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                    <input type="button" class="btn btn-primary" value="Clear" (click)="onClear()"
+                        style="margin: auto; width: 100%;">
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </div>

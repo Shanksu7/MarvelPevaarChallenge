@@ -13,7 +13,6 @@ import { CharacterDataWrapper } from '../../classes/character-data-wrapper';
 })
 export class CharactersListComponent implements OnInit {
 
-  counter: number = 0;
   selected: any;
   characters: Character[];
   charactersOriginal: Character[];

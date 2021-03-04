@@ -7,7 +7,7 @@
   /* Create three equal columns that floats next to each other */
   .column {
     float: left;
-    width: 70.3%;
+    width: 67.3%;
     padding: 10px;
   }
   .column-side{
@@ -15,6 +15,12 @@
     width: 14.6%;
     padding: 10px;
     height: 300px; /* Should be removed. Only for demonstration */
+  }
+  .column-right
+  {
+    float: left;
+    width: 18%;
+    padding: 10px;
   }
   
   /* Clear floats after the columns */
@@ -28,7 +34,7 @@
 .char-header{
   padding-top: 10px;
   text-transform: uppercase;
-  color: black;
+  color: white;
   font-size: 40px;
   font-family: marvel-regular;
   position:absolute;
@@ -43,15 +49,16 @@
 }
 
 .filters{
-  margin-left: 56px;
-  margin-right: 54px;
+  margin-left: 0px;
   background-color: white;
   padding: 10px;
+  max-width: 300px;
   margin-top: 15px;
   margin-bottom: 15px;
+  border-radius: 10px;
 }
+
 div.searcher input[type=text] {
-  padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
   float: left;
@@ -60,16 +67,15 @@ div.searcher input[type=text] {
   outline: 0;
   border-width: 0 0 2px;
   border-color: black;
-  color: white;
+  color: black;
 }
 
 div.searcher input:focus {
   border-color: white;
-  color: white;
+  color: black;
 }
 div.searcher ::placeholder {
-  color: white;
-  opacity: 1; /* Firefox */
+  color: black;
 }
 div.searcher button {
   float: left;
