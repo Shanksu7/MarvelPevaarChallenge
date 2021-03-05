@@ -1,0 +1,25 @@
+<div class="col-12" style="margin-top: 100px;">
+    <div class="row info-card">
+        <div class="col-12">
+            <div class="row" style="background-color: #3bb7b7;">
+                <div style=" color:white; padding-top: 18px; padding-bottom: 14px;">
+                    <span class="hero-name">{{title}}</span>
+                </div>
+            </div>
+        </div>
+        <blockquote class="row-description">
+
+            <div class="col-12" style="margin-top: 10px;">
+                <div class="row">
+                    <div class="{{col}}" *ngFor="let item of items">
+                        <app-url-arrow-comic (clicked)="onClick($event)"
+                        [url]="item.resourceURI"
+                        [arrowInd]="1" 
+                        [text]="item.name">
+                        </app-url-arrow-comic>
+                    </div>
+                </div>
+            </div>
+        </blockquote>
+    </div>
+</div>

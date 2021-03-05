@@ -7,10 +7,12 @@ import { CommonMarvelModule } from '../common-marvel/common-marvel.module';
 import { ComicsModule } from '../comics/comics.module';
 import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MiniCardInformationComponent } from './components/mini-card-information/mini-card-information.component';
+import { ModalItemInformationComponent } from './components/modal-item-information/modal-item-information.component';
 
 
 @NgModule({
-  declarations: [CharactersListComponent, CharacterCardInformationComponent, CharacterDetailComponent],
+  declarations: [CharactersListComponent, CharacterCardInformationComponent, CharacterDetailComponent, MiniCardInformationComponent, ModalItemInformationComponent],
   imports: [
     CommonModule,
     ComicsModule,

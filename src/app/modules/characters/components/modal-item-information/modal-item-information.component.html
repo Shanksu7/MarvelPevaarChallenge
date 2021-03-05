@@ -1,0 +1,24 @@
+<div>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title"> aa {{ name }}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="modal-body">
+                    <img class="profile-pic" src="{{path}}/portrait_xlarge.{{extension}}"
+                        alt="{{name}}.jpg" />
+                </div>
+            </div>
+            <div class="col">
+                <span [innerHTML]="description"></span>
+            </div>
+        </div>
+    
+        <div class="modal-footer">
+        </div>
+    </div>
+    

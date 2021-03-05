@@ -1,5 +1,57 @@
-<div *ngIf="character">
-    <div class="detail-container">
-        {{character.name}}
+<div>
+    <div class="column-side">
+    </div>
+    <div class="column" style="background-color:rgb(187, 187, 187, 0.5);">
+
+        <div class="container-fluid detail-container">
+            <div class="row" *ngIf="character">
+                <div class="col-12">
+                    <div class="row  info-card">
+                        <div class="col-12">
+                            <div class="row" style="background-color: #3bb7b7;">
+                                <div class="icon-header col-2">
+                                    <!--<img src="../../../../../assets/icons/characters.png" />-->
+                                </div>
+                                <div style=" color:white; padding-top: 18px; padding-bottom: 14px;">
+                                    <span class="hero-name">{{character.name}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <blockquote class="row-description">
+
+                            <div class="col-12" style="margin-top: 10px;">
+                                <div class="row">
+                                    <img class="hero-image"
+                                        src="{{character.thumbnail.path}}/portrait_fantastic.{{character.thumbnail.extension}}"
+                                        alt="{{character.name}}.jpg" />
+                                    <div class="col">
+                                        {{character.name}}
+                                        {{character.description}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2" (click)="onClickWiki(item)" *ngFor="let item of character.urls">
+                                <app-url-arrow-comic [text]="item.type" [arrowInd]="1"></app-url-arrow-comic>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+                <app-mini-card-information (itemClicked)="onClickComic($event)" [title]="'comics'"
+                    [items]="character.comics.items" [available]="character.comics.available">
+                </app-mini-card-information>
+                <app-mini-card-information (itemClicked)="onClickStory($event)" [title]="'stories'"
+                    [items]="character.stories.items" [available]="character.stories.available">
+                </app-mini-card-information>
+                <app-mini-card-information (itemClicked)="onClickSerie($event)" [title]="'series'"
+                    [items]="character.series.items" [available]="character.series.available">
+                </app-mini-card-information>
+                <app-mini-card-information (itemClicked)="onClickSerie($event)" [title]="'events'"
+                    [items]="character.events.items" [available]="character.events.available">
+                </app-mini-card-information>
+            </div>
+        </div>
+
+    </div>
+    <div class="column-right">
     </div>
 </div>

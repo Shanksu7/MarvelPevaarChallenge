@@ -1,3 +1,3 @@
-<a (mouseout)="hoverLeave()" (mouseover)="hover()" [ngStyle]="{ 'z-index': 10, 'cursor': 'pointer'}">
+<a (click)="onClick()" (mouseout)="hoverLeave()" (mouseover)="hover()" [ngStyle]="{ 'z-index': 10, 'cursor': 'pointer'}">
     <div class="text" [ngStyle]="{'color': color}"><img [src]="imgSrc">{{text}}</div>
 </a>

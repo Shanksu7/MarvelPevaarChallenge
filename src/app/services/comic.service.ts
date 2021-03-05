@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ServiceConstants, getParams, url } from '../constants/service-constants';
+import { getParams } from '../constants/service-constants';
 import { HttpClient } from '@angular/common/http'
 import { SearchParams } from '../modules/common-marvel/classes/search-params';
 import { Observable } from 'rxjs/internal/Observable';

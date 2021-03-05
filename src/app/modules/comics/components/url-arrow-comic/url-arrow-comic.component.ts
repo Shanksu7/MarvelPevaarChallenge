@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-url-arrow-comic',
@@ -9,6 +10,10 @@ export class UrlArrowComicComponent implements OnInit {
 
   constructor() { }
   @Input() text: string;
+  @Input() url: string;
+  @Input() arrowInd: number = 0;
+  @Output() clicked = new EventEmitter<any>();
+  arrows: Array<string> = ['../../../../../assets/icons/link-arrow.png', '../../../../../assets/icons/link-arrow-details.png']
   imgSrc: string = '';
   color: string = 'blue';
   ngOnInit(): void {
@@ -21,6 +26,19 @@ export class UrlArrowComicComponent implements OnInit {
   }
   hover(){
     this.color = 'red';
-    this.imgSrc='../../../../../assets/icons/link-arrow.png';
+    this.imgSrc= this.arrows[this.arrowInd];
+  }
+
+  onClick() {
+   /* if (!this.openUrl) return;
+    else {
+      if (this.routerNavigate) {
+        this.router.navigate([this.url]);
+      }
+      else {
+        window.open(this.url, "_blank");
+      }
+    }*/
+    this.clicked.emit({text: this.text, url: this.url});
   }
 }
