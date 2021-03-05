@@ -1,1 +1,5 @@
 @import '../character-detail/character-detail.component.css';
+
+.row-description{
+    width: 100%;
+}

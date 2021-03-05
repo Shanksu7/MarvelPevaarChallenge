@@ -35,6 +35,9 @@
 .hero-name{
     color:white;
     padding-left: 20px;
+    font-family: marvel-regular;
+    font-size: 47px;
+    text-transform: uppercase;
 }
 
 .hero-image{
@@ -45,13 +48,6 @@
     border-right-color: #cfcfcf;
     border-bottom-color: #dfdbcd;
     border-left-color: #cfcfcf;
-}
-
-.hero-name{
-    -webkit-text-stroke: 0.1px black; /* width and color */
-    color:white;
-    text-transform: uppercase;
-    font-size: 30px;
 }
 
 /**/
@@ -89,4 +85,8 @@
 
 .row-description::after{
   content: '';
+}
+
+app-mini-card-information{
+  width: 100%;
 }
