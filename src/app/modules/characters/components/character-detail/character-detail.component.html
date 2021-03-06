@@ -29,8 +29,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2" (click)="onClickWiki(item)" *ngFor="let item of character.urls">
-                                <app-url-arrow-comic [text]="item.type" [arrowInd]="1"></app-url-arrow-comic>
+                            <div class="col-12">External links: </div>
+                            <div class="col-12" (click)="onClickWiki(item)" *ngFor="let item of character.urls">
+                                 <app-url-arrow-comic [text]="item.type" [arrowInd]="1"></app-url-arrow-comic>
                             </div>
                         </blockquote>
                     </div>
