@@ -10,6 +10,7 @@ export class PagenotfoundComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    document.body.classList.add('black');
   }
 
 }

@@ -11,14 +11,14 @@
   }
   .column-side{
     float: left;
-    width: 14.6%;
+    width: 18%;
     padding: 10px;
     height: 300px; /* Should be removed. Only for demonstration */
   }
   .column-right
   {
     float: left;
-    width: 18%;
+    width: 14.6%;
     padding: 10px;
   }
   
@@ -48,7 +48,7 @@
 }
 
 .filters{
-  margin-left: 0px;
+  margin-left: 25spx;
   background-color: white;
   padding: 10px;
   max-width: 300px;

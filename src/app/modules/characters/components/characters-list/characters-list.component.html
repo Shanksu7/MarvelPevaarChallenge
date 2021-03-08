@@ -1,36 +1,5 @@
 <div (wheel)="onScroll($event)">
     <div class="column-side">
-        <app-comic-fav-list #favs></app-comic-fav-list>
-    </div>
-    <div class="column" style="background-color:rgb(187, 187, 187, 0.5);">
-        <div class="col-12">
-            <img class="cha0racter-icon" src="../../../../../assets/icons/characters.png" />
-            <span class="char-header">Characters </span>
-        </div>
-        <div class="row" style="margin-left: -4px;">
-            <div class="col-6" *ngFor="let character of characters">
-                <app-character-card-information [favModal]="favs" [character]="character">
-                </app-character-card-information>
-            </div>
-        </div>
-        <div class="col-12 row align-items-center">
-            <div class="col">
-            </div>
-            <div class="col" [ngStyle]="{'margin-right': '129px'}">
-                <div class="arrow-container">
-                    <div class="page-arrow btn">
-                        <img (click)="prevPage()" src="../../../../../assets/icons/btn_arrow_left.png" />
-                    </div>
-                    <div class="page-arrow btn">
-                        <img (click)="nextPage()" src="../../../../../assets/icons/btn_arrow_right.png" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="column-right">
-
-
         <div class="row" style="position: fixed; margin-left: 10px;">
             <div class="col -12 filters">
                 <div class="col-12">
@@ -76,6 +45,37 @@
             </div>
             
         </div>
+    </div>
+    <div class="column" style="background-color:rgb(187, 187, 187, 0.5);">
+        <div class="col-12">
+            <img class="cha0racter-icon" src="../../../../../assets/icons/characters.png" />
+            <span class="char-header">Characters </span>
+        </div>
+        <div class="row" style="margin-left: -4px;">
+            <div class="col-6" *ngFor="let character of characters">
+                <app-character-card-information [favModal]="favs" [character]="character">
+                </app-character-card-information>
+            </div>
+        </div>
+        <div class="col-12 row align-items-center">
+            <div class="col">
+            </div>
+            <div class="col" [ngStyle]="{'margin-right': '129px'}">
+                <div class="arrow-container">
+                    <div class="page-arrow btn">
+                        <img (click)="prevPage()" src="../../../../../assets/icons/btn_arrow_left.png" />
+                    </div>
+                    <div class="page-arrow btn">
+                        <img (click)="nextPage()" src="../../../../../assets/icons/btn_arrow_right.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column-right">
+        <app-comic-fav-list #favs></app-comic-fav-list>
+
+      
 
     </div>
 </div>
