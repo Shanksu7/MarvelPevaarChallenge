@@ -55,6 +55,8 @@
             <div class="col">
             </div>
             <div class="col" [ngStyle]="{'margin-right': '129px'}">
+                <app-pagination-buttons></app-pagination-buttons>
+
                 <div class="arrow-container">
                     <div class="page-arrow btn">
                         <img (click)="prevPage()" src="../../../../../assets/icons/btn_arrow_left.png" />
@@ -82,6 +84,8 @@
                     <div class="page-arrow btn">
                         <img (click)="nextPage()" src="../../../../../assets/icons/btn_arrow_right.png" />
                     </div>
+                    
+                <app-pagination-buttons></app-pagination-buttons>
                 </div>
             </div>
         </div>

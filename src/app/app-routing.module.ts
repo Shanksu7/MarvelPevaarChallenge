@@ -8,6 +8,7 @@ import { ComicFavoriteListComponent } from './modules/comics/components/comic-hi
 import { CartComponent } from './modules/common-marvel/components/cart/cart.component';
 import { HistoryComponent } from './modules/common-marvel/components/history/history.component';
 import { PdfViewModalComponent } from './modules/common-marvel/components/pdf-view-modal/pdf-view-modal.component';
+import { PaginationButtonsComponent } from './modules/common-marvel/pagination-buttons/pagination-buttons.component';
 import { PagenotfoundComponent } from './modules/notfound/pagenotfound/pagenotfound.component';
 
 
@@ -41,6 +42,11 @@ const routes: Routes = [
     path: 'fav-comics',
     component: ComicFavoritesComponent
   },
+  {
+    path: 'test',
+    component: PaginationButtonsComponent
+  },
+  
   {
     path: '**',
     component: PagenotfoundComponent

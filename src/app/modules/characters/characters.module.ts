@@ -17,7 +17,8 @@ import { ModalItemInformationComponent } from './components/modal-item-informati
     CommonModule,
     ComicsModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    CommonMarvelModule
   ],
   exports: [CharacterCardInformationComponent]
 })

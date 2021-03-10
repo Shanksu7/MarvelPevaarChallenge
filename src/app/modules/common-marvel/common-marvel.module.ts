@@ -13,9 +13,10 @@ import { ComicsModule } from '../comics/comics.module';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
+import { PaginationButtonsComponent } from './pagination-buttons/pagination-buttons.component';
 
 @NgModule({
-  declarations: [FooterComponent, HeaderMenuComponent, PdfViewModalComponent, CartComponent, HistoryComponent],
+  declarations: [FooterComponent, HeaderMenuComponent, PdfViewModalComponent, CartComponent, HistoryComponent, PaginationButtonsComponent],
   imports: [
     CommonModule,
     PdfViewerModule,
@@ -25,6 +26,6 @@ import {MatInputModule} from '@angular/material/input';
     MatTableModule,
     MatInputModule
   ],
-  exports: [FooterComponent, HeaderMenuComponent]
+  exports: [FooterComponent, HeaderMenuComponent, PaginationButtonsComponent]
 })
 export class CommonMarvelModule { }
