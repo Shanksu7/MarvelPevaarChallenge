@@ -38,12 +38,14 @@
                     <input type="button" class="btn btn-primary" value="Clear" (click)="onClear()"
                         style="margin: auto; width: 100%;">
                 </div>
-                
+
             </div>
-            <div class="col-12" style="height: 100px;" >
-                <img (click)="toTop()" *ngIf="showToTop" class="cha0racter-icon" src="../../../../../assets/icons/up-arrow-icon-top.png" style="height: 100%;padding-left: 100px;cursor:pointer;"/>
+            <div class="col-12" style="height: 100px;">
+                <img (click)="toTop()" *ngIf="showToTop" class="cha0racter-icon"
+                    src="../../../../../assets/icons/up-arrow-icon-top.png"
+                    style="height: 100%;padding-left: 100px;cursor:pointer;" />
             </div>
-            
+
         </div>
     </div>
     <div class="column" style="background-color:rgb(187, 187, 187, 0.5);">
@@ -55,16 +57,8 @@
             <div class="col">
             </div>
             <div class="col" [ngStyle]="{'margin-right': '129px'}">
-                <app-pagination-buttons></app-pagination-buttons>
-
-                <div class="arrow-container">
-                    <div class="page-arrow btn">
-                        <img (click)="prevPage()" src="../../../../../assets/icons/btn_arrow_left.png" />
-                    </div>
-                    <div class="page-arrow btn">
-                        <img (click)="nextPage()" src="../../../../../assets/icons/btn_arrow_right.png" />
-                    </div>
-                </div>
+                <app-pagination-buttons [totalResults]="available" (pageChanged)="onPageChanged($event)">
+                </app-pagination-buttons>
             </div>
         </div>
         <div class="row" style="margin-left: -4px;">
@@ -78,14 +72,7 @@
             </div>
             <div class="col" [ngStyle]="{'margin-right': '129px'}">
                 <div class="arrow-container">
-                    <div class="page-arrow btn">
-                        <img (click)="prevPage()" src="../../../../../assets/icons/btn_arrow_left.png" />
-                    </div>
-                    <div class="page-arrow btn">
-                        <img (click)="nextPage()" src="../../../../../assets/icons/btn_arrow_right.png" />
-                    </div>
-                    
-                <app-pagination-buttons></app-pagination-buttons>
+                    <app-pagination-buttons></app-pagination-buttons>
                 </div>
             </div>
         </div>
@@ -93,7 +80,7 @@
     <div class="column-right">
         <app-comic-fav-list #favs></app-comic-fav-list>
 
-      
+
 
     </div>
 </div>

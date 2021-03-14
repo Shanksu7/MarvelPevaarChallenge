@@ -11,6 +11,12 @@ export class PaginationButtonsComponent implements OnInit {
 
   constructor() {
     this.current = 1;
+    this.max = Math.floor(this.totalResults/10)
+    if(this.totalResults % this.max > 0){
+     this.max += 1;
+    }
+    console.log('this.max');
+    console.log(this.max);
   }
   @Input() totalResults: number = 1493;
   @Output() pageChanged = new EventEmitter<any>();
@@ -20,7 +26,6 @@ export class PaginationButtonsComponent implements OnInit {
   pages: any = [];
 
   ngOnInit(): void {
-    this.max = Math.floor(this.totalResults/10)
     this.getPages();
   }
 
@@ -61,12 +66,16 @@ export class PaginationButtonsComponent implements OnInit {
   end() {
     this.current = this.max;
     this.pageChanged.emit(this.current);
+    console.log('current');
+    console.log(this.current);
     this.getPages();
   }
 
   prev() {
     this.current -= 1;
     this.pageChanged.emit(this.current);
+    console.log('current');
+    console.log(this.current);
     this.getPages();
   }
 

@@ -22,6 +22,7 @@ export class CharactersListComponent implements OnInit {
   nameFilter: string = '';
   lastSearch: string = '';
   showToTop: boolean = false;
+  available: number;
   constructor(private characterService: CharacterService)
   {
   }
@@ -59,41 +60,14 @@ export class CharactersListComponent implements OnInit {
     console.log(params);
     this.characterService.getPaginatedCharacters(params).subscribe(data => 
     {
+      this.available = data.data.total;
       this.charactersOriginal = data.data.results;
       this.characters = data.data.results;
       });
   }
 
-  nextPage() {
-    this.offSet += 10;
-    this.search();
-  }
-
-  prevPage() {
-    this.offSet = this.offSet <= 10 ? 0 : this.offSet - 10;
-    this.search();
-  }
 
   sort() {
-   /*
-    if (this.selected == 1 || this.selected == 2) {
-      console.log('name sort');
-      let sortIndex = this.selected == 1 ? 1 : -1;
-      this.characters = this.characters.sort((a, b) => {
-        if(a.name < b.name) { return -1 * sortIndex; }
-        if(a.name > b.name) { return  1 * sortIndex; }
-        return 0;
-      })
-    }
-    else {
-      let sortIndex = this.selected == 3 ? 1 : -1;
-      this.characters = this.characters.sort((a, b) => {
-        if(a.modified < b.modified) { return -1 * sortIndex; }
-        if(a.modified > b.modified) { return  1 * sortIndex; }
-        return 0;
-      })
-    }
-    console.log(this.selected);*/
     this.search();
   }
 
@@ -141,4 +115,21 @@ export class CharactersListComponent implements OnInit {
     window.scroll(0, 0);
     this.showToTop = false;
   }
+
+  onPageChanged($event){
+    console.log($event);
+    this.offSet = ($event-1) * 10;
+    this.search();
+  }
+
+  /*
+  nextPage() {
+    this.offSet += 10;
+    this.search();
+  }
+
+  prevPage() {
+    this.offSet = this.offSet <= 10 ? 0 : this.offSet - 10;
+    this.search();
+  } */
 }
