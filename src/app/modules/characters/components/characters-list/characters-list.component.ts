@@ -1,10 +1,8 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SearchParams } from 'src/app/modules/common-marvel/classes/search-params';
-import { DataWrapper } from 'src/app/modules/common-marvel/interface/data-wrapper';
 import { CharacterService } from 'src/app/services/character.service';
 import Swal from 'sweetalert2';
 import { Character } from '../../classes/character';
-import { CharacterDataWrapper } from '../../classes/character-data-wrapper';
 
 @Component({
   selector: 'app-characters-list',
@@ -13,6 +11,7 @@ import { CharacterDataWrapper } from '../../classes/character-data-wrapper';
 })
 export class CharactersListComponent implements OnInit {
 
+  
   selected: any;
   characters: Character[];
   charactersOriginal: Character[];
@@ -23,13 +22,13 @@ export class CharactersListComponent implements OnInit {
   lastSearch: string = '';
   showToTop: boolean = false;
   available: number;
+
   constructor(private characterService: CharacterService)
   {
   }
 
   ngOnInit(): void {
     this.search();
-
   }
 
   search() {
@@ -85,8 +84,6 @@ export class CharactersListComponent implements OnInit {
     else {
       this.characters = this.charactersOriginal.filter(x => x.name.toLowerCase().includes(name.toLowerCase()))
     }
-    //this.sort();
-
   }
 
   onClear() {
@@ -101,10 +98,6 @@ export class CharactersListComponent implements OnInit {
   }
 
   onScroll($event:Event){
-    console.log(window.pageYOffset);
-    console.log(window.innerHeight);
-    console.log(window.outerHeight);
-    console.log('----------------');
     if (window.pageYOffset > 150)
       this.showToTop = true;
     else
@@ -122,14 +115,4 @@ export class CharactersListComponent implements OnInit {
     this.search();
   }
 
-  /*
-  nextPage() {
-    this.offSet += 10;
-    this.search();
-  }
-
-  prevPage() {
-    this.offSet = this.offSet <= 10 ? 0 : this.offSet - 10;
-    this.search();
-  } */
 }

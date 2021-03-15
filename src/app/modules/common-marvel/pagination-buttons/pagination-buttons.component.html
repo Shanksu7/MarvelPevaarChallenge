@@ -1,7 +1,7 @@
     <div>
         <button [disabled]="current == min" (click)="begin()">«</button>
         <button [disabled]="current == min" (click)="prev()">&lt;</button>
-        <button [disabled]="x == current"   (click)="selection(x)" *ngFor="let x of pages">{{x}}</button>
+        <button [disabled]="x == current"   (click)="selection(x)" *ngFor="let x of getPages()">{{x}}</button>
         <button [disabled]="current == max" (click)="next()">&gt;</button>
         <button [disabled]="current == max" (click)="end()">»</button>
     </div>

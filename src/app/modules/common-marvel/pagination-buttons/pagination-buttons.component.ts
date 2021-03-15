@@ -1,5 +1,3 @@
-import { typeWithParameters } from '@angular/compiler/src/render3/util';
-import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -10,22 +8,29 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class PaginationButtonsComponent implements OnInit {
 
   constructor() {
-    this.current = 1;
-    this.max = Math.floor(this.totalResults/10)
-    if(this.totalResults % this.max > 0){
-     this.max += 1;
-    }
-    console.log('this.max');
-    console.log(this.max);
+
   }
-  @Input() totalResults: number = 1493;
+
+  get max() {
+    let val = Math.floor(this.totalResults / 10);
+
+    if (this.totalResults < 10)
+      val = 1;
+    else if (this.totalResults % val > 0)
+      val += 1;
+    return val;
+  }
+
+  @Input() totalResults: number;
   @Output() pageChanged = new EventEmitter<any>();
   min: number = 1;
-  max: number;
-  current: number;
+  current: number = 1;
   pages: any = [];
+  extraMax: number;
 
   ngOnInit(): void {
+    this.current = 1;
+
     this.getPages();
   }
 
@@ -34,6 +39,7 @@ export class PaginationButtonsComponent implements OnInit {
 
     if (this.current + 4 >= this.max) {
       for (let i = this.max; i >= this.max - 5; i--) {
+        if (i < 1) continue;
         this.pages.unshift(i);
       }
       console.log(this.current)
@@ -44,23 +50,25 @@ export class PaginationButtonsComponent implements OnInit {
       let val = (this.current - 4 < this.min ? this.min : this.current - 4);
       let addRight = this.min + 4 <= this.current;
       for (let i = val; i <= (addRight ? this.current + 4 : val + 4); i++) {
+        if (i < 1) continue;
         this.pages.push(i);
       }
-      
-      console.log(this.current)
+
     }
+
+    console.log(this.current)
+
+    return this.pages;
   }
 
   selection(x) {
     this.current = x;
     this.pageChanged.emit(this.current);
-    this.getPages();
   }
 
   begin() {
     this.current = this.min;
     this.pageChanged.emit(this.current);
-    this.getPages();
   }
 
   end() {
@@ -68,7 +76,6 @@ export class PaginationButtonsComponent implements OnInit {
     this.pageChanged.emit(this.current);
     console.log('current');
     console.log(this.current);
-    this.getPages();
   }
 
   prev() {
@@ -76,12 +83,10 @@ export class PaginationButtonsComponent implements OnInit {
     this.pageChanged.emit(this.current);
     console.log('current');
     console.log(this.current);
-    this.getPages();
   }
 
   next() {
     this.current += 1;
     this.pageChanged.emit(this.current);
-    this.getPages();
   }
 }
