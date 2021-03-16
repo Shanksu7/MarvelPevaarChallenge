@@ -124,3 +124,14 @@ div.searcher::after {
   clear: both;
   display: table;
 }
+.marvel-btn{
+  background-color: red;
+  color: white;
+  border-color: red !important;
+}
+.marvel-btn:hover{
+  background-color: rgb(187, 4, 4);
+}
+.marvel-btn:active{
+  transform: translateY(4px);
+}

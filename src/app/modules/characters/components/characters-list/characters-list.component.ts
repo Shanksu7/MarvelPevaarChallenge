@@ -70,7 +70,9 @@ export class CharactersListComponent implements OnInit {
     this.search();
   }
 
-  searchButton() {
+  searchButton(pag) {
+    this.offSet = 0;
+    pag?.resetCurrent();
     this.search();
   }
 
@@ -86,7 +88,8 @@ export class CharactersListComponent implements OnInit {
     }
   }
 
-  onClear() {
+  onClear(pag) {
+    pag?.resetCurrent();
     this.clear();
     this.search();
   }

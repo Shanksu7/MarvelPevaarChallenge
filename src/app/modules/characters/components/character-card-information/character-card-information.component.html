@@ -21,8 +21,8 @@
             </div>
             <div>
                 <div class="row col-12 h4 mt-2">Related Comics</div>
-                <div class="row">
-                    <div class="col-12" style="margin-top: 15px;" *ngFor="let comic of comicsToShow">
+                <div *ngIf="comicsToShow.length > 0" class="row">
+                    <div  class="col-12" style="margin-top: 15px;" *ngFor="let comic of comicsToShow">
                         <div (click)="open(mymodal, comic)" >
                             <app-url-arrow-comic #comicarrow [text]="comic.name">
                             </app-url-arrow-comic>
@@ -32,6 +32,12 @@
 
                             </app-comic-character-card-modal>
                         </ng-template>
+                    </div>
+                </div>
+
+                <div *ngIf="comicsToShow.length == 0" class="row">
+                    <div  class="col-12" style="margin-top: 15px;">
+                        No comics to show
                     </div>
                 </div>
             </div>

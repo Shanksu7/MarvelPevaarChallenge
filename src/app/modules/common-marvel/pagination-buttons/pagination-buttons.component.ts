@@ -89,4 +89,10 @@ export class PaginationButtonsComponent implements OnInit {
     this.current += 1;
     this.pageChanged.emit(this.current);
   }
+
+  resetCurrent()
+  {
+    this.current = 1;
+    this.getPages();
+  }
 }
