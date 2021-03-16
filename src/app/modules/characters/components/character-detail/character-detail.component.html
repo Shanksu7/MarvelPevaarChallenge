@@ -24,8 +24,11 @@
                                     <img class="hero-image" 
                                         src="{{character.thumbnail.path}}/portrait_fantastic.{{character.thumbnail.extension}}"
                                         alt="{{character.name}}.jpg" />
-                                    <div class="col">
+                                    <div class="col" *ngIf="character.description">
                                         {{character.description}}
+                                    </div>
+                                    <div class="col" *ngIf="!character.description">
+                                        No description for this hero.
                                     </div>
                                 </div>
                             </div>
