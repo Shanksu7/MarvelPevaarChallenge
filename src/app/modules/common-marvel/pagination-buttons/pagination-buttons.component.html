@@ -1,7 +1,19 @@
     <div>
-        <button [disabled]="current == min" (click)="begin()">«</button>
-        <button [disabled]="current == min" (click)="prev()">&lt;</button>
-        <button [disabled]="x == current"   (click)="selection(x)" [ngClass]="{'button-selected': x == current}" *ngFor="let x of getPages()">{{x}}</button>
-        <button [disabled]="current == max" (click)="next()">&gt;</button>
-        <button [disabled]="current == max" (click)="end()">»</button>
+        <button [disabled]="current == min" 
+                (click)="begin()"
+                [ngClass]="{'button-selected': min == current, 'button-option': min != current}">«</button>
+        <button [disabled]="current == min" 
+                (click)="prev()"
+                [ngClass]="{'button-selected': min == current, 'button-option': min != current}">&lt;</button>
+        <button [disabled]="x == current"   
+                *ngFor="let x of getPages()"
+                (click)="selection(x)" 
+                [ngClass]="{'button-selected': x == current, 'button-option': x != current}"    
+                >{{x}}</button>
+        <button [disabled]="current == max" 
+                (click)="next()"
+                [ngClass]="{'button-selected': max == current, 'button-option': max != current}">&gt;</button>
+        <button [disabled]="current == max" 
+                (click)="end()"
+                [ngClass]="{'button-selected': max == current, 'button-option': max != current}">»</button>
     </div>

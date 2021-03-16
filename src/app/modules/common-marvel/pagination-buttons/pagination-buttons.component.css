@@ -1,11 +1,18 @@
 button{
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: black;
     width: 40px;
+    border: 1px solid black;
+    font-weight: 500;
     height: 30px;
 }
 
+.button-option:hover{
+    cursor: pointer;
+    background-color: red;
+    
+}
 .button-selected{
-    background-color: black;
-    cursor:not-allowed;
+    background-color: rgb(161, 6, 6); /*rgba(255, 255, 255, 0.582);*/
+    color: white;
 }
