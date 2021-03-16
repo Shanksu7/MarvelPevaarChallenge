@@ -33,7 +33,6 @@ export class CharactersListComponent implements OnInit {
 
   search() {
     let params = new SearchParams();
-    this.lastSearch = this.startWith;
     params.limit = 10;
     params.nameStartsWith = this.startWith && this.startWith != '' ? this.startWith : null;
     params.offset = this.offSet;
@@ -59,16 +58,18 @@ export class CharactersListComponent implements OnInit {
     console.log(params);
     this.characterService.getPaginatedCharacters(params).subscribe(data => 
     {
+      if(data?.data?.total == 0)
+      {
+        Swal.fire('Sorry', 'No hero matching your search: ' + this.startWith, 'error');
+        return;
+      }
+      this.lastSearch = this.startWith;
       this.available = data.data.total;
       this.charactersOriginal = data.data.results;
       this.characters = data.data.results;
       });
   }
 
-
-  sort() {
-    this.search();
-  }
 
   searchButton(pag) {
     this.offSet = 0;

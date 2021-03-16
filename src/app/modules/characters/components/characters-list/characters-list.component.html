@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-12">
                     <div class="searcherList">
-                        <input #search [(ngModel)]="startWith" type="text"
+                        <input #search [(ngModel)]="startWith" type="text" (keyup.enter)="searchButton(paginator)"
                             placeholder="Name start with...">
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                     <div style="max-width:222px; padding:10px; max-height: 73px;">
                         <mat-form-field appearance="fill">
                             <mat-label>Order By </mat-label>
-                            <mat-select [(value)]="selected" (selectionChange)="sort()">
+                            <mat-select [(value)]="selected">
                                 <mat-option value="1">A - Z</mat-option>
                                 <mat-option value="2">Z - A</mat-option>
                                 <mat-option value="3">Date Ascending</mat-option>
@@ -57,7 +57,7 @@
                 </app-pagination-buttons>
             </div>
         </div>
-        <div class="row" style="margin-left: -4px;">
+        <div class="row" style="margin-left: -4px;"  *ngIf="characters.length > 0">
             <div class="col-6" *ngFor="let character of characters">
                 <app-character-card-information [favModal]="favs" [character]="character">
                 </app-character-card-information>
