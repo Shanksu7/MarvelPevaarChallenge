@@ -53,8 +53,6 @@
         </div>
         <div class="col-12 row align-items-center">
             <div class="m-auto pb-2" [ngStyle]="{'margin-right': '129px', 'padding-right': '80px'}">
-                <app-pagination-buttons #paginator [totalResults]="available" (pageChanged)="onPageChanged($event)">
-                </app-pagination-buttons>
             </div>
         </div>
         <div class="row" style="margin-left: -4px;"  *ngIf="characters.length > 0">
@@ -64,11 +62,9 @@
             </div>
         </div>
         <div class="col-12 row align-items-center">
-            <div class="col">
-            </div>
-            <div class="col" [ngStyle]="{'margin-right': '129px'}">
-                <div class="arrow-container">
-                </div>
+            <div class="m-auto pb-2" [ngStyle]="{'margin-right': '129px', 'padding-right': '80px'}">
+                <app-pagination-buttons #paginator [totalResults]="available" (pageChanged)="onPageChanged($event)">
+                </app-pagination-buttons>
             </div>
         </div>
     </div>
